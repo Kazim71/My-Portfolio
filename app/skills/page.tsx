@@ -12,7 +12,6 @@ import {
   Settings,
   GitBranch,
   Github,
-  Git,
   Box,
   Layers,
   FileCode,
@@ -74,7 +73,7 @@ const skillCategories = [
   {
     title: "Tools",
     skills: [
-      { name: "Git", icon: Git },
+      { name: "Git", icon: GitBranch },
       { name: "GitHub", icon: Github },
       { name: "VS Code", icon: Code },
     ],
@@ -101,7 +100,7 @@ export default function Skills() {
                     <SkillCard
                       key={skillIndex}
                       name={skill.name}
-                      icon={skill.icon}
+                      icon={<skill.icon className="w-8 h-8" />}
                     />
                   ))}
                 </div>
@@ -114,4 +113,3 @@ export default function Skills() {
     </>
   );
 }
-
