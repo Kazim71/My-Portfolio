@@ -1,0 +1,99 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Inter+Tight:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --bg: #F5F5F3;
+  --bg-soft: #FFFFFF;
+  --bg-elevated: #FAFAFA;
+
+  --text: #1B1B1B;
+  --text-muted: #585858;
+  --text-soft: #8C8C8C;
+
+  --border: rgba(0, 0, 0, 0.08);
+  --divider: rgba(0, 0, 0, 0.06);
+
+  --accent: #262626;
+  --accent-soft: #3C3C3C;
+  --accent-alt: #2C2C2C;
+
+  --chip-bg: #F0F0EC;
+  --chip-text: #323232;
+}
+
+.dark {
+  --bg: #0a0a0a;
+  --bg-soft: #171717;
+  --bg-elevated: #262626;
+
+  --text: #ededed;
+  --text-muted: #a1a1a1;
+  --text-soft: #737373;
+
+  --border: rgba(255, 255, 255, 0.1);
+  --divider: rgba(255, 255, 255, 0.08);
+
+  --accent: #ffffff;
+  --accent-soft: #e5e5e5;
+  --accent-alt: #3b82f6;
+
+  --chip-bg: #262626;
+  --chip-text: #e5e5e5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Glass morphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.dark .glass {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Gradient text - kept for legacy support but minimal usage recommended */
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-alt) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-soft);
+  border-radius: 4px;
+  opacity: 0.5;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
