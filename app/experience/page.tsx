@@ -12,28 +12,15 @@ export const metadata: Metadata = {
 const experiences = [
 {
   company: "AplyEase",
-  role: "Web Developer",
-  duration: "October 2025 - Present",
-  location: "Hybrid",
+  role: "Associate Software Engineer",
+  duration: "March 2025 - Present",
+  location: "Remote",
   points: [
-    "Developing full-stack client platforms using React.js, Next.js, Tailwind CSS, and Shadcn UI for high-traffic HRMS workflows",
-    "Building secure backend services using Node.js, Express.js, MongoDB, JWT authentication, and role-based access control",
-    "Implemented HRMS modules including shift scheduling, attendance tracking, approval pipelines, and automated notifications",
-    "Designed automation dashboards and analytics systems that improved operational efficiency by 40%",
-    "Managing CI/CD pipelines and deployments on AWS and Vercel ensuring 99% uptime",
-  ],
-},
-{
-  company: "Quore B2B",
-  role: "Full Stack Developer Intern",
-  duration: "March 2025 - October 2025",
-  location: "Hybrid",
-  points: [
-    "Built two B2B SaaS platforms (MartechBiz & Compare Bazaar) using Next.js, Tailwind CSS, and Shadcn UI",
-    "Developed scalable backend APIs with Node.js, Express.js, MongoDB, Redis caching, and JWT authentication",
-    "Integrated AI-powered content automation using Gemini AI for blogs, insights, and comparison summaries",
-    "Integrated third-party services including Mailchimp, EmailJS, Web3 APIs, and SEO analytics with GTAG and Search Console",
-    "Worked on system design, vendor quote aggregation pipelines, and performance optimization",
+    "Developed and owned internal SaaS modules using React.js that support daily HR and operations workflows across teams.",
+    "Designed reusable UI components and form-heavy dashboards with a focus on maintainable state management.",
+    "Implemented core HRMS features including attendance tracking, shift scheduling, approval flows, and automated notifications used in production.",
+    "Integrated frontend applications with REST APIs, handling validation errors, API failures, and edge cases in real usage.",
+    "Managed production deployments on Vercel and resolved build, configuration, and release issues during active development cycles.",
   ],
 },
 {

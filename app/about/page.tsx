@@ -18,7 +18,7 @@ import {
 
 export const metadata: Metadata = {
   title: "About - Mohammad Kazim",
-  description: "Learn more about Mohammad Kazim, a Full Stack Developer specializing in MERN stack and AI",
+  description: "Learn more about Mohammad Kazim, a Associate Software Engineer",
 };
 
 const education = [
@@ -41,18 +41,13 @@ const stats = [
   { label: "Major Projects", value: "3+" },
   { label: "Tech Stack", value: "MERN + AI" },
   { label: "Deployment", value: "CI/CD + Cloud" },
-  { label: "Expertise", value: "System Design" },
 ];
 
 const techStack = [
   { name: "React", icon: ReactIcon },
   { name: "Node.js", icon: Node },
   { name: "MongoDB", icon: Database },
-  { name: "AWS", icon: Cloud },
-  { name: "Docker", icon: Settings },
   { name: "Git", icon: GitBranch },
-  { name: "TypeScript", icon: Code },
-  { name: "GraphQL", icon: Terminal },
 ];
 
 export default function About() {
@@ -64,7 +59,7 @@ export default function About() {
           {/* Header */}
           <SectionHeader
             title="About Me"
-            subtitle="Passionate Full Stack Developer building modern web applications and AI-powered solutions"
+            subtitle="Aspiring Software Engineer building modern web applications and AI-powered solutions"
           />
 
           {/* Professional Summary */}
@@ -74,14 +69,14 @@ export default function About() {
                 <div className="glass rounded-2xl p-8 border border-gray-200/50 dark:border-gray-800/50">
                   <h3 className="text-2xl font-bold mb-4 gradient-text">Professional Summary</h3>
                   <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                    I&apos;m a Full Stack Developer with expertise in the MERN stack and AI integrations.
+                    I&apos;m a Associate Software Engineer with expertise in the MERN stack and AI integrations.
                     I specialize in building scalable web systems, AI-driven applications, and modern
                     digital experiences. My passion lies in creating efficient, maintainable code
                     and leveraging cutting-edge technologies to solve complex problems.
                   </p>
                   <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
                     With experience in both frontend and backend development, I bring a holistic
-                    approach to software engineering. I&apos;m skilled in system design, cloud deployment,
+                    approach to software engineering. I&apos;m skilled in cloud deployment,
                     and implementing CI/CD pipelines to ensure robust and reliable applications.
                   </p>
                 </div>
