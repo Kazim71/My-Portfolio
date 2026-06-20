@@ -27,55 +27,81 @@ export const metadata: Metadata = {
 
 const skillCategories = [
   {
-    title: "Frontend",
+    title: "Programming Languages",
     skills: [
-      { name: "React", icon: Box },
+      { name: "Python", icon: FileCode },
       { name: "JavaScript", icon: FileCode },
-      { name: "TypeScript", icon: FileCode },
-      { name: "HTML5", icon: Code },
-      { name: "CSS3", icon: Palette },
-      { name: "Tailwind CSS", icon: Palette },
+      { name: "SQL", icon: Database },
+      { name: "PHP", icon: FileCode },
     ],
   },
   {
-    title: "Backend",
+    title: "Backend Development",
     skills: [
+      { name: "FastAPI", icon: Server },
       { name: "Node.js", icon: Server },
       { name: "Express.js", icon: Network },
       { name: "REST APIs", icon: Code },
-      { name: "GraphQL", icon: Terminal },
+      { name: "API Integration", icon: Network },
+      { name: "Authentication", icon: Settings },
+      { name: "Authorization", icon: Settings },
     ],
   },
   {
     title: "Databases",
     skills: [
-      { name: "MongoDB", icon: Database },
+      { name: "PostgreSQL", icon: Database },
+      { name: "MySQL", icon: Database },
       { name: "Database Design", icon: Database },
+      { name: "Query Optimization", icon: Database },
+      { name: "Data Modeling", icon: Layers },
+      { name: "Indexing", icon: Database },
     ],
   },
   {
-    title: "DevOps",
+    title: "Frontend",
     skills: [
-      { name: "AWS", icon: Cloud },
+      { name: "React.js", icon: Box },
+      { name: "Next.js", icon: Box },
+      { name: "Tailwind CSS", icon: Palette },
+      { name: "HTML5", icon: Code },
+      { name: "CSS3", icon: Palette },
+    ],
+  },
+  {
+    title: "Cloud & Infrastructure",
+    skills: [
+      { name: "AWS EC2", icon: Cloud },
       { name: "Docker", icon: Box },
-      { name: "CI/CD", icon: Settings },
-      { name: "Cloud Deployment", icon: Cloud },
-    ],
-  },
-  {
-    title: "Programming",
-    skills: [
-      { name: "JavaScript", icon: FileCode },
-      { name: "TypeScript", icon: FileCode },
-      { name: "System Design", icon: Cpu },
-    ],
-  },
-  {
-    title: "Tools",
-    skills: [
+      { name: "Linux", icon: Terminal },
       { name: "Git", icon: GitBranch },
       { name: "GitHub", icon: Github },
-      { name: "VS Code", icon: Code },
+      { name: "DNS Management", icon: Network },
+      { name: "SSL", icon: Settings },
+      { name: "Cloud Deployments", icon: Cloud },
+    ],
+  },
+  {
+    title: "Software Engineering",
+    skills: [
+      { name: "Object-Oriented Programming", icon: Cpu },
+      { name: "Data Structures", icon: Layers },
+      { name: "Algorithms", icon: Cpu },
+      { name: "Unit Testing", icon: Settings },
+      { name: "Debugging", icon: Terminal },
+      { name: "Code Reviews", icon: GitBranch },
+      { name: "Agile Development", icon: Settings },
+    ],
+  },
+  {
+    title: "Systems & Networking",
+    skills: [
+      { name: "Operating Systems", icon: Cpu },
+      { name: "TCP/IP", icon: Network },
+      { name: "HTTP", icon: Network },
+      { name: "System Design Fundamentals", icon: Layers },
+      { name: "Performance Optimization", icon: Settings },
+      { name: "Production Troubleshooting", icon: Terminal },
     ],
   },
 ];

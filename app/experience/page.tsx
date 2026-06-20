@@ -10,33 +10,32 @@ export const metadata: Metadata = {
 };
 
 const experiences = [
-{
-  company: "AplyEase",
-  role: "Associate Software Engineer",
-  duration: "March 2025 - Present",
-  location: "Remote",
-  points: [
-    "Developed and owned internal SaaS modules using React.js that support daily HR and operations workflows across teams.",
-    "Designed reusable UI components and form-heavy dashboards with a focus on maintainable state management.",
-    "Implemented core HRMS features including attendance tracking, shift scheduling, approval flows, and automated notifications used in production.",
-    "Integrated frontend applications with REST APIs, handling validation errors, API failures, and edge cases in real usage.",
-    "Managed production deployments on Vercel and resolved build, configuration, and release issues during active development cycles.",
-  ],
-},
-{
-  company: "SAIL",
-  role: "Frontend Intern",
-  duration: "June 2024 - August 2024",
-  location: "Onsite",
-  points: [
-    "Built responsive and interactive user interfaces using React.js and Tailwind CSS",
-    "Integrated REST APIs to fetch and display operational metrics across dashboards",
-    "Improved application responsiveness, accessibility, and UI performance",
-    "Collaborated with designers and backend engineers in agile sprint cycles",
-    "Used Git and GitHub for version control, reviews, and team collaboration",
-  ],
-},
-
+  {
+    company: "EZ Rankings",
+    role: "Backend Developer",
+    duration: "March 2026 - Present",
+    location: "Noida, India",
+    points: [
+      "Developed and maintained backend workflows, REST APIs, and database-driven applications across 15+ production systems.",
+      "Built Python automation utilities for CSV ingestion, data validation, reporting, and workflow automation.",
+      "Designed and integrated REST APIs, business validation layers, and data-processing workflows to support operational requirements.",
+      "Investigated and resolved production incidents involving API failures, deployment regressions, and database inconsistencies.",
+      "Collaborated with cross-functional teams to enhance system reliability, performance, and maintainability.",
+    ],
+  },
+  {
+    company: "Clay Brains",
+    role: "Junior Web Developer",
+    duration: "February 2025 - February 2026",
+    location: "Delhi, India",
+    points: [
+      "Developed backend modules, reusable services, and data-driven features for production web applications.",
+      "Improved database performance through SQL query optimization, indexing strategies, and execution plan analysis.",
+      "Managed Linux-based cloud infrastructure including AWS EC2, SSL configuration, DNS management, and deployment workflows.",
+      "Participated in debugging, testing, code maintenance, and release activities across multiple client projects.",
+      "Worked with APIs, databases, and deployment environments to deliver scalable and reliable solutions.",
+    ],
+  },
 ];
 
 export default function Experience() {
