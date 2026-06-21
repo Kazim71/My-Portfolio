@@ -1,74 +1,93 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { Github } from "lucide-react";
+import { ArrowUpRight, Lock } from "lucide-react";
+import Reveal from "@/components/Reveal";
 
 interface ProjectCardProps {
+  index: number;
   title: string;
-  description: string;
-  techStack: string[];
-  githubUrl?: string;
-  index?: number;
+  summary: string;
+  problem: string;
+  solution: string;
+  impact: string;
+  stack: string[];
+  live?: string;
+  liveLabel?: string;
+  internal?: boolean;
+}
+
+function Detail({ label, text }: { label: string; text: string }) {
+  return (
+    <div>
+      <p className="font-mono text-[11px] uppercase tracking-label text-text-soft">
+        {label}
+      </p>
+      <p className="mt-1.5 text-sm leading-relaxed text-text-muted">{text}</p>
+    </div>
+  );
 }
 
 export default function ProjectCard({
+  index,
   title,
-  description,
-  techStack,
-  githubUrl,
-  index = 0,
+  summary,
+  problem,
+  solution,
+  impact,
+  stack,
+  live,
+  liveLabel,
+  internal,
 }: ProjectCardProps) {
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: index * 0.1 }}
-      className="group h-full"
-    >
-      <div className="glass rounded-2xl p-6 border border-gray-200/50 dark:border-gray-800/50 hover:shadow-2xl transition-all duration-300 h-full flex flex-col relative overflow-hidden">
-        {/* Decorative gradient blob */}
-        <div className="absolute -top-20 -right-20 w-40 h-40 bg-violet-500/10 rounded-full blur-3xl group-hover:bg-violet-500/20 transition-colors" />
-        
-        <div className="relative z-10 flex flex-col h-full">
-          <div className="flex justify-between items-start mb-4">
-            <h3 className="text-xl font-bold group-hover:text-violet-600 dark:group-hover:text-cyan-400 transition-colors line-clamp-1">
-              {title}
-            </h3>
-            {githubUrl && (
-              <a
-                href={githubUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-violet-100 dark:hover:bg-cyan-900/30 hover:text-violet-600 dark:hover:text-cyan-400 transition-all shrink-0"
-                title="View Code"
-              >
-                <Github className="w-5 h-5" />
-              </a>
-            )}
-          </div>
+    <Reveal delay={index * 0.08}>
+      <article className="group grid grid-cols-1 gap-6 rounded-card border border-border bg-bg-soft p-6 transition-colors hover:border-accent-line md:grid-cols-[1fr_1.4fr] md:gap-10 md:p-8">
+        {/* Left: identity */}
+        <div className="flex flex-col">
+          <span className="font-mono text-xs text-accent">
+            P{String(index + 1).padStart(2, "0")}
+          </span>
+          <h3 className="mt-3 font-heading text-xl font-semibold tracking-tight text-text md:text-2xl text-balance">
+            {title}
+          </h3>
+          <p className="mt-3 text-sm leading-relaxed text-text-muted">{summary}</p>
 
-          <p className="text-gray-600 dark:text-gray-400 mb-6 text-sm leading-relaxed flex-1 line-clamp-4">
-            {description}
-          </p>
-
-          <div className="flex flex-wrap gap-2 mt-auto">
-            {techStack.slice(0, 4).map((tech) => (
+          <div className="mt-5 flex flex-wrap gap-2">
+            {stack.map((s) => (
               <span
-                key={tech}
-                className="px-3 py-1 text-[10px] font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-700"
+                key={s}
+                className="rounded-pill bg-chip-bg px-2.5 py-1 font-mono text-[11px] text-chip-text"
               >
-                {tech}
+                {s}
               </span>
             ))}
-            {techStack.length > 4 && (
-               <span className="px-3 py-1 text-[10px] font-medium bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 rounded-full border border-gray-200 dark:border-gray-700">
-                 +{techStack.length - 4}
-               </span>
+          </div>
+
+          <div className="mt-auto pt-6">
+            {live ? (
+              <a
+                href={live}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 text-sm font-medium text-text transition-colors hover:text-accent"
+              >
+                {liveLabel ?? "Live site"}
+                <ArrowUpRight className="h-4 w-4" />
+              </a>
+            ) : (
+              <span className="inline-flex items-center gap-1.5 font-mono text-xs text-text-soft">
+                <Lock className="h-3.5 w-3.5" />
+                Internal production system
+              </span>
             )}
           </div>
         </div>
-      </div>
-    </motion.div>
+
+        {/* Right: case study */}
+        <div className="grid grid-cols-1 gap-5 border-t border-divider pt-6 md:border-l md:border-t-0 md:pl-10 md:pt-0">
+          <Detail label="Problem" text={problem} />
+          <Detail label="Solution" text={solution} />
+          <Detail label="Impact" text={impact} />
+        </div>
+      </article>
+    </Reveal>
   );
 }

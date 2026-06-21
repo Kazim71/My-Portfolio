@@ -26,8 +26,9 @@ const config: Config = {
         },
         accent: {
           DEFAULT: "var(--accent)",
-          soft: "var(--accent-soft)",
-          alt: "var(--accent-alt)",
+          strong: "var(--accent-strong)",
+          tint: "var(--accent-tint)",
+          line: "var(--accent-line)",
         },
         chip: {
           bg: "var(--chip-bg)",
@@ -37,18 +38,21 @@ const config: Config = {
       fontFamily: {
         heading: ["var(--font-heading)", "system-ui", "sans-serif"],
         body: ["var(--font-body)", "system-ui", "sans-serif"],
+        mono: ["var(--font-mono)", "ui-monospace", "SFMono-Regular", "monospace"],
+      },
+      letterSpacing: {
+        label: "0.2em",
       },
       boxShadow: {
-        soft: "0 18px 45px rgba(0,0,0,0.08)",
-        card: "0 22px 60px rgba(0,0,0,0.10)",
+        soft: "0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.05)",
+        card: "0 1px 2px rgba(0,0,0,0.05), 0 18px 50px rgba(0,0,0,0.07)",
       },
       borderRadius: {
-        card: "18px",
+        card: "14px",
         pill: "999px",
       },
-      spacing: {
-        section: "7rem",
-        sectionLg: "9rem",
+      maxWidth: {
+        content: "72rem",
       },
     },
   },
@@ -56,4 +60,3 @@ const config: Config = {
 };
 
 export default config;
-

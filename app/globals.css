@@ -2,46 +2,52 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Inter+Tight:wght@400;500;600;700;800;900&display=swap');
+/*
+  Palette: warm stone neutrals + a single restrained copper accent.
+  Light mode -> soft stone / ivory surfaces, warm charcoal text.
+  Dark mode  -> deep graphite, near-white text, muted copper accent.
+*/
 
 :root {
-  --bg: #F5F5F3;
-  --bg-soft: #FFFFFF;
-  --bg-elevated: #FAFAFA;
+  --bg: #f4f2ed;
+  --bg-soft: #faf9f5;
+  --bg-elevated: #ffffff;
 
-  --text: #1B1B1B;
-  --text-muted: #585858;
-  --text-soft: #8C8C8C;
+  --text: #1c1a17;
+  --text-muted: #5b564e;
+  --text-soft: #8a8377;
 
-  --border: rgba(0, 0, 0, 0.08);
-  --divider: rgba(0, 0, 0, 0.06);
+  --border: rgba(28, 26, 23, 0.1);
+  --divider: rgba(28, 26, 23, 0.07);
 
-  --accent: #262626;
-  --accent-soft: #3C3C3C;
-  --accent-alt: #2C2C2C;
+  --accent: #a65e33;
+  --accent-strong: #8f4d27;
+  --accent-tint: rgba(166, 94, 51, 0.1);
+  --accent-line: rgba(166, 94, 51, 0.28);
 
-  --chip-bg: #F0F0EC;
-  --chip-text: #323232;
+  --chip-bg: #ece8e0;
+  --chip-text: #3a352d;
 }
 
 .dark {
-  --bg: #0a0a0a;
-  --bg-soft: #171717;
-  --bg-elevated: #262626;
+  --bg: #121211;
+  --bg-soft: #1a1a18;
+  --bg-elevated: #222220;
 
-  --text: #ededed;
-  --text-muted: #a1a1a1;
-  --text-soft: #737373;
+  --text: #eceae4;
+  --text-muted: #a29d93;
+  --text-soft: #756f65;
 
   --border: rgba(255, 255, 255, 0.1);
-  --divider: rgba(255, 255, 255, 0.08);
+  --divider: rgba(255, 255, 255, 0.07);
 
-  --accent: #ffffff;
-  --accent-soft: #e5e5e5;
-  --accent-alt: #3b82f6;
+  --accent: #cf9468;
+  --accent-strong: #d9a37b;
+  --accent-tint: rgba(207, 148, 104, 0.12);
+  --accent-line: rgba(207, 148, 104, 0.3);
 
-  --chip-bg: #262626;
-  --chip-text: #e5e5e5;
+  --chip-bg: #26241f;
+  --chip-text: #ddd8ce;
 }
 
 * {
@@ -57,31 +63,25 @@ html {
 body {
   background-color: var(--bg);
   color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Glass morphism effect */
-.glass {
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+/* Hairline section divider */
+.hairline {
+  border-color: var(--divider);
 }
 
-.dark .glass {
-  background: rgba(255, 255, 255, 0.05);
-}
-
-/* Gradient text - kept for legacy support but minimal usage recommended */
-.gradient-text {
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-alt) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+/* Subtle dotted grid used sparingly behind the hero artifact */
+.dot-grid {
+  background-image: radial-gradient(var(--border) 1px, transparent 1px);
+  background-size: 22px 22px;
 }
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 9px;
 }
 
 ::-webkit-scrollbar-track {
@@ -90,10 +90,21 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background: var(--text-soft);
-  border-radius: 4px;
-  opacity: 0.5;
+  border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--text-muted);
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
 }
