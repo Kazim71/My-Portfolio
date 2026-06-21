@@ -50,21 +50,13 @@ export default function Contact() {
     },
   ]
 
-  const handleDownloadResume = async () => {
-    try {
-      const response = await fetch("/api/resume")
-      const blob = await response.blob()
-      const url = window.URL.createObjectURL(blob)
-      const a = document.createElement("a")
-      a.href = url
-      a.download = "Mohammad_Kazim_Resume.txt"
-      document.body.appendChild(a)
-      a.click()
-      window.URL.revokeObjectURL(url)
-      document.body.removeChild(a)
-    } catch (error) {
-      console.error("Error downloading resume:", error)
-    }
+  const handleDownloadResume = () => {
+    const a = document.createElement("a")
+    a.href = "/Kazim_Backend_Developer_Resume.pdf"
+    a.download = "Mohammad_Kazim_Resume.pdf"
+    document.body.appendChild(a)
+    a.click()
+    document.body.removeChild(a)
   }
 
   return (
