@@ -1,29 +1,33 @@
 "use client"
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import Link from "next/link"
-import { Moon, Sun, Menu, X } from "lucide-react"
+import { Menu, X } from "lucide-react"
+import { ThemeToggle } from "@/components/theme-toggle"
 
-interface HeaderProps {
-  isDark: boolean
-  toggleDarkMode: () => void
-}
-
-export default function Header({ isDark, toggleDarkMode }: HeaderProps) {
+export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 20)
+    }
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
 
   const navLinks = [
     { href: "#about", label: "About" },
-    { href: "#skills", label: "Skills" },
-    { href: "#process", label: "Process" },
-    { href: "#projects", label: "Projects" },
     { href: "#experience", label: "Experience" },
+    { href: "#projects", label: "Projects" },
+    { href: "#engineering", label: "Engineering" },
+    { href: "#skills", label: "Skills" },
     { href: "#contact", label: "Contact" },
   ]
 
   return (
     <>
-      {/* Skip to main content link for keyboard navigation */}
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:p-2 focus:bg-primary focus:text-primary-foreground focus:rounded"
@@ -31,18 +35,23 @@ export default function Header({ isDark, toggleDarkMode }: HeaderProps) {
         Skip to main content
       </a>
 
-      <header className="sticky top-0 z-40 bg-background/80 backdrop-blur-md border-b border-border">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16">
+      <header
+        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+          scrolled
+            ? "bg-background/80 backdrop-blur-md border-b border-border/50 shadow-sm"
+            : "bg-transparent border-transparent"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+          <div className="flex items-center justify-between h-16 md:h-20">
             {/* Logo */}
             <Link
               href="#"
               className="flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-primary focus:rounded"
             >
-              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-bold text-sm">MK</span>
-              </div>
-              <span className="font-bold text-lg hidden sm:inline">Mohammad</span>
+              <span className="font-mono font-bold text-lg tracking-tight text-foreground hover:text-primary transition-colors">
+                kazim.dev
+              </span>
             </Link>
 
             {/* Desktop Navigation */}
@@ -51,27 +60,28 @@ export default function Header({ isDark, toggleDarkMode }: HeaderProps) {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:rounded px-2 py-1"
+                  className="text-sm font-medium text-secondary-foreground hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:rounded px-1 py-1"
                 >
                   {link.label}
                 </a>
               ))}
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm font-medium text-primary border border-primary/30 hover:bg-primary/10 px-4 py-2 rounded-md transition-colors"
+              >
+                Resume
+              </a>
             </nav>
 
-            {/* Right Actions */}
+            {/* Right Actions (Theme Toggle & Mobile Menu Button) */}
             <div className="flex items-center gap-4">
-              <button
-                onClick={toggleDarkMode}
-                className="p-2 hover:bg-secondary rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
-                aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}
-              >
-                {isDark ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
-              </button>
-
-              {/* Mobile Menu Button */}
+              <ThemeToggle />
+              
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="md:hidden p-2 hover:bg-secondary rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
+                className="p-2 text-foreground hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary md:hidden"
                 aria-label={isMenuOpen ? "Close menu" : "Open menu"}
                 aria-expanded={isMenuOpen}
               >
@@ -82,17 +92,26 @@ export default function Header({ isDark, toggleDarkMode }: HeaderProps) {
 
           {/* Mobile Navigation */}
           {isMenuOpen && (
-            <nav className="md:hidden pb-4 flex flex-col gap-2" aria-label="Mobile navigation">
+            <nav className="md:hidden pb-6 pt-2 flex flex-col gap-4 border-t border-border/50" aria-label="Mobile navigation">
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="px-4 py-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-secondary rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
+                  className="text-base font-medium text-secondary-foreground hover:text-primary transition-colors"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {link.label}
                 </a>
               ))}
+              <a
+                href="/resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-base font-medium text-primary mt-2"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Resume
+              </a>
             </nav>
           )}
         </div>

@@ -1,8 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { HoverEffect } from "./aceternity/hover-effect"
-import { Code2, Users, Shield, Zap, Lightbulb, BookOpen, MapPin, Mail, Phone, Clock } from "lucide-react"
+import { Server, Zap, Shield, GitBranch, Terminal } from "lucide-react"
 
 export default function About() {
   const containerVariants = {
@@ -10,8 +9,8 @@ export default function About() {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2,
-        delayChildren: 0.3,
+        staggerChildren: 0.1,
+        delayChildren: 0.1,
       },
     },
   }
@@ -21,136 +20,99 @@ export default function About() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: "easeOut" },
+      transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] },
     },
   }
 
-  const highlights = [
-    {
-      title: "Backend Development",
-      description:
-        "Designing and maintaining REST APIs, business validation layers, and data-processing workflows for production systems.",
-      icon: <Code2 size={28} strokeWidth={1.5} className="text-primary" />,
-    },
-    {
-      title: "Automation & Scripting",
-      description:
-        "Building Python automation utilities for CSV ingestion, data validation, reporting, and workflow automation.",
-      icon: <Zap size={28} strokeWidth={1.5} className="text-primary" />,
-    },
-    {
-      title: "Database Engineering",
-      description: "Optimizing SQL queries, indexing strategies, and execution plans for performant, reliable data systems.",
-      icon: <Shield size={28} strokeWidth={1.5} className="text-primary" />,
-    },
-    {
-      title: "Cloud & Infrastructure",
-      description: "Managing Linux-based AWS infrastructure including EC2, SSL, DNS, Docker, and deployment workflows.",
-      icon: <Users size={28} strokeWidth={1.5} className="text-primary" />,
-    },
-    {
-      title: "Production Troubleshooting",
-      description: "Investigating and resolving incidents involving API failures, deployment regressions, and data inconsistencies.",
-      icon: <Lightbulb size={28} strokeWidth={1.5} className="text-primary" />,
-    },
-    {
-      title: "Continuous Learning",
-      description: "Strengthening foundations in system design, data structures, algorithms, testing, and scalable architecture.",
-      icon: <BookOpen size={28} strokeWidth={1.5} className="text-primary" />,
-    },
+  const principles = [
+    { title: "Reliability First", desc: "Systems should be predictable, stable, and resilient to failure." },
+    { title: "Clean Architecture", desc: "Separation of concerns, modularity, and maintainability over clever hacks." },
+    { title: "Scalable APIs", desc: "Designing for performance, security, and developer experience." },
+    { title: "Automation over Repetition", desc: "If it has to be done more than twice, automate it." },
+    { title: "Continuous Learning", desc: "Constantly expanding knowledge in systems, architecture, and new tools." },
+  ]
+
+  const focusAreas = [
+    { icon: <Server className="w-5 h-5" />, title: "Backend Systems", desc: "Building scalable and robust backend architecture." },
+    { icon: <Zap className="w-5 h-5" />, title: "Automation pipelines", desc: "Streamlining workflows to reduce operational overhead." },
+    { icon: <Shield className="w-5 h-5" />, title: "Database Optimization", desc: "Designing efficient schemas and query optimization." },
+    { icon: <GitBranch className="w-5 h-5" />, title: "Cloud Infrastructure", desc: "Deploying and managing AWS and Docker environments." },
   ]
 
   return (
-    <section id="about" className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl opacity-50" />
-        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl opacity-50" />
-        <div className="absolute top-1/2 right-0 w-96 h-96 bg-secondary/5 rounded-full blur-3xl opacity-30" />
-      </div>
+    <section id="about" className="py-24 px-6 lg:px-8 max-w-7xl mx-auto border-t border-border/50">
+      <motion.div
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24"
+      >
+        {/* Left Column: Heading */}
+        <motion.div variants={itemVariants} className="lg:col-span-4">
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-4">
+            About
+          </h2>
+          <div className="w-12 h-1 bg-primary rounded-full mb-8" />
+        </motion.div>
 
-      <div className="max-w-6xl mx-auto relative z-10">
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          <motion.div variants={itemVariants} className="mb-16">
-            <h2 className="text-5xl md:text-6xl font-bold mb-6 text-balance">
-              About{" "}
-              <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-                Me
-              </span>
-            </h2>
-            <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent rounded-full" />
+        {/* Right Column: Content */}
+        <div className="lg:col-span-8 space-y-16">
+          
+          {/* Summary */}
+          <motion.div variants={itemVariants} className="space-y-6">
+            <h3 className="text-xl font-semibold text-foreground border-b border-border/50 pb-2">Summary</h3>
+            <div className="text-base text-secondary-foreground leading-relaxed space-y-4 max-w-2xl">
+              <p>
+                I am a Software Engineer with over a year of hands-on experience building and maintaining
+                production applications, backend services, automation workflows, and database-driven systems.
+              </p>
+              <p>
+                My expertise spans Python, JavaScript, SQL, REST APIs, Linux, Docker, and AWS. I have successfully 
+                delivered solutions across 15+ production environments, specializing in API integrations, data processing, 
+                infrastructure troubleshooting, and application reliability.
+              </p>
+            </div>
           </motion.div>
 
-          <motion.div variants={itemVariants} className="mb-16 max-w-3xl">
-            <p className="text-xl text-muted-foreground leading-relaxed mb-6">
-              I'm a Software Engineer with{" "}
-              <span className="font-semibold text-foreground">1.6+ year</span> of experience developing and maintaining
-              production applications, backend services, automation workflows, and database-driven systems. I work
-              across Python, JavaScript, SQL, REST APIs, Linux, Docker, and AWS.
-            </p>
-            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              I've delivered solutions across{" "}
-              <span className="font-semibold text-foreground">15+ production environments</span> involving API
-              integrations, data processing, database optimization, infrastructure troubleshooting, and application
-              reliability.
-            </p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              I bring a strong foundation in{" "}
-              <span className="font-semibold text-foreground">
-                scalable system design, debugging, testing, and cross-functional collaboration
-              </span>
-              , and I'm always sharpening my skills in software engineering fundamentals.
-            </p>
-          </motion.div>
-
-          <motion.div variants={itemVariants} className="mb-16">
-            <h3 className="text-2xl font-bold mb-8 text-foreground">Core Expertise</h3>
-            <HoverEffect items={highlights} />
-          </motion.div>
-
-          <motion.div variants={itemVariants}>
-            <h3 className="text-2xl font-bold mb-8 text-foreground">Quick Info</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-              {[
-                { label: "Location", value: "India", icon: <MapPin size={24} strokeWidth={1.5} /> },
-                {
-                  label: "Email",
-                  value: "mohammadkazim71@gmail.com",
-                  link: "mailto:mohammadkazim71@gmail.com",
-                  icon: <Mail size={24} strokeWidth={1.5} />,
-                },
-                {
-                  label: "Phone",
-                  value: "+91 7898184847",
-                  link: "tel:+917898184847",
-                  icon: <Phone size={24} strokeWidth={1.5} />,
-                },
-                { label: "Experience", value: "1+ Years", icon: <Clock size={24} strokeWidth={1.5} /> },
-              ].map((item, idx) => (
-                <motion.div
-                  key={idx}
-                  className="p-4 bg-card rounded-lg border border-border hover:border-primary transition-colors"
-                  whileHover={{ scale: 1.05 }}
-                >
-                  <div className="text-primary mb-2">{item.icon}</div>
-                  <p className="text-xs text-muted-foreground mb-1">{item.label}</p>
-                  {item.link ? (
-                    <a href={item.link} className="font-semibold text-primary hover:underline text-sm">
-                      {item.value}
-                    </a>
-                  ) : (
-                    <p className="font-semibold text-foreground text-sm">{item.value}</p>
-                  )}
-                </motion.div>
+          {/* Core Focus */}
+          <motion.div variants={itemVariants} className="space-y-6">
+            <h3 className="text-xl font-semibold text-foreground border-b border-border/50 pb-2">Core Focus</h3>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 pt-2">
+              {focusAreas.map((area, idx) => (
+                <div key={idx} className="flex gap-4">
+                  <div className="mt-1 text-primary shrink-0 p-2 bg-primary/10 rounded-md">
+                    {area.icon}
+                  </div>
+                  <div>
+                    <h4 className="text-base font-medium text-foreground">{area.title}</h4>
+                    <p className="text-sm text-secondary-foreground mt-1 leading-relaxed">
+                      {area.desc}
+                    </p>
+                  </div>
+                </div>
               ))}
             </div>
           </motion.div>
-        </motion.div>
-      </div>
+
+          {/* Engineering Principles */}
+          <motion.div variants={itemVariants} className="space-y-6">
+            <h3 className="text-xl font-semibold text-foreground border-b border-border/50 pb-2">Engineering Principles</h3>
+            <ul className="space-y-4 pt-2">
+              {principles.map((principle, idx) => (
+                <li key={idx} className="flex items-start gap-3 group">
+                  <Terminal className="w-5 h-5 text-primary shrink-0 mt-0.5 opacity-70 group-hover:opacity-100 transition-opacity" />
+                  <div>
+                    <span className="font-medium text-foreground">{principle.title}</span>
+                    <span className="text-secondary-foreground ml-2">— {principle.desc}</span>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </motion.div>
+
+        </div>
+      </motion.div>
     </section>
   )
 }

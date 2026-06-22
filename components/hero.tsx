@@ -1,9 +1,7 @@
 "use client"
 
-import { ArrowRight, Download, Sparkles } from "lucide-react"
+import { ArrowRight, Download, Server, Database, Activity, Globe, Shield } from "lucide-react"
 import { motion } from "framer-motion"
-import { TextGenerateEffect } from "./aceternity/text-generate-effect"
-import { SilkBackground } from "./aceternity/silk-background"
 
 export default function Hero() {
   const containerVariants = {
@@ -12,7 +10,7 @@ export default function Hero() {
       opacity: 1,
       transition: {
         staggerChildren: 0.1,
-        delayChildren: 0.2,
+        delayChildren: 0.1,
       },
     },
   }
@@ -22,124 +20,179 @@ export default function Hero() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8, ease: "easeOut" },
+      transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] },
     },
   }
 
-  const floatingVariants = {
-    animate: {
-      y: [0, -20, 0],
-      transition: {
-        duration: 4,
-        repeat: Number.POSITIVE_INFINITY,
-        ease: "easeInOut",
-      },
-    },
-  }
+  const technologies = ["Python", "Node.js", "PostgreSQL", "Docker", "AWS", "Linux"]
 
   return (
-    <SilkBackground>
-      <section
-        className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-20 relative overflow-hidden"
-        id="main-content"
-      >
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" aria-hidden="true" />
-          <div
-            className="absolute bottom-0 right-1/4 w-96 h-96 bg-secondary/5 rounded-full blur-3xl"
-            aria-hidden="true"
-          />
-        </div>
-
+    <section className="min-h-screen pt-32 pb-16 px-6 lg:px-8 max-w-7xl mx-auto flex flex-col justify-center" id="main-content">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        {/* Left Side: Content */}
         <motion.div
-          className="max-w-4xl mx-auto text-center relative z-10"
           variants={containerVariants}
           initial="hidden"
           animate="visible"
+          className="flex flex-col items-start text-left relative z-10"
         >
-          <motion.div variants={itemVariants} className="mb-6 inline-block">
-            <motion.div
-              className="px-4 py-2 bg-gradient-to-r from-primary/20 to-accent/20 text-primary rounded-full text-sm font-medium border border-primary/30 flex items-center gap-2"
-              animate={{ scale: [1, 1.05, 1] }}
-              transition={{ duration: 2, repeat: Number.POSITIVE_INFINITY }}
-            >
-              <Sparkles className="w-4 h-4" aria-hidden="true" />
-              Welcome to my portfolio
-            </motion.div>
-          </motion.div>
-
           <motion.h1
             variants={itemVariants}
-            className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 text-balance leading-tight"
+            className="text-[4rem] sm:text-[5rem] font-bold text-foreground tracking-tight leading-none mb-6"
           >
-            <span className="bg-gradient-to-r from-foreground via-primary to-accent bg-clip-text text-transparent">
-              Mohammad Kazim
-            </span>
+            Mohammad Kazim
           </motion.h1>
+
+          <motion.h2
+            variants={itemVariants}
+            className="text-2xl sm:text-3xl text-secondary-foreground font-medium tracking-tight mb-6"
+          >
+            Software Engineer
+          </motion.h2>
 
           <motion.p
             variants={itemVariants}
-            className="text-xl sm:text-2xl text-muted-foreground mb-4 text-balance font-semibold"
+            className="text-lg sm:text-xl text-secondary-foreground mb-8 max-w-xl leading-relaxed"
           >
-            Software Engineer
+            Building backend systems, automation workflows, APIs, and cloud-native applications.
           </motion.p>
 
-          <motion.div variants={itemVariants} className="mb-12">
-            <TextGenerateEffect
-              words="Software Engineer with 1+ year of experience building production applications, backend services, automation workflows, and database-driven systems across Python, JavaScript, SQL, REST APIs, Linux, Docker, and AWS."
-              className="text-lg text-muted-foreground max-w-2xl mx-auto text-balance leading-relaxed"
-              duration={0.05}
-              filter={true}
-            />
-          </motion.div>
-
-          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-            <motion.a
-              href="#process"
-              className="inline-flex items-center justify-center gap-2 px-8 py-3 bg-gradient-to-r from-primary to-accent text-primary-foreground rounded-lg font-medium hover:shadow-lg transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              View My Work
-              <ArrowRight className="w-4 h-4" aria-hidden="true" />
-            </motion.a>
-            <motion.a
-              href="/Kazim_Backend_Developer_Resume.pdf"
-              download
-              className="inline-flex items-center justify-center gap-2 px-8 py-3 border-2 border-primary/50 rounded-lg font-medium hover:bg-primary/10 hover:border-primary transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2"
-              whileHover={{ scale: 1.05, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Download Resume
-              <Download className="w-4 h-4" aria-hidden="true" />
-            </motion.a>
-          </motion.div>
-
-          <motion.div variants={itemVariants} className="grid grid-cols-3 gap-8 max-w-2xl mx-auto">
-            {[
-              { value: "1+", label: "Years Experience" },
-              { value: "15+", label: "Production Systems" },
-              { value: "8.45", label: "CGPA" },
-            ].map((stat, idx) => (
-              <motion.div
-                key={idx}
-                variants={itemVariants}
-                whileHover={{ scale: 1.1 }}
-                className="p-4 rounded-lg bg-card border border-border/50 hover:border-primary transition-colors"
+          <motion.div variants={itemVariants} className="flex flex-wrap gap-2 mb-10">
+            {technologies.map((tech) => (
+              <span
+                key={tech}
+                className="px-3 py-1 bg-secondary border border-border text-foreground text-sm font-medium rounded-md"
               >
-                <motion.div
-                  className="text-3xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
-                  animate={{ scale: [1, 1.05, 1] }}
-                  transition={{ duration: 2, delay: idx * 0.2, repeat: Number.POSITIVE_INFINITY }}
-                >
-                  {stat.value}
-                </motion.div>
-                <div className="text-sm text-muted-foreground mt-2">{stat.label}</div>
-              </motion.div>
+                {tech}
+              </span>
             ))}
           </motion.div>
+
+          <motion.div variants={itemVariants} className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">
+            <a
+              href="#projects"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-foreground text-background rounded-md font-medium hover:bg-foreground/90 transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background"
+            >
+              View Projects
+              <ArrowRight className="w-4 h-4" />
+            </a>
+            <a
+              href="/Kazim_Backend_Developer_Resume.pdf"
+              download
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-border bg-transparent text-foreground rounded-md font-medium hover:bg-secondary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background"
+            >
+              Download Resume
+              <Download className="w-4 h-4" />
+            </a>
+          </motion.div>
         </motion.div>
-      </section>
-    </SilkBackground>
+
+        {/* Right Side: Architecture Diagram */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+          className="relative w-full aspect-square max-w-lg mx-auto lg:mx-0 flex items-center justify-center"
+        >
+          {/* Subtle grid background for the diagram area */}
+          <div className="absolute inset-0 bg-[linear-gradient(to_right,#23272F_1px,transparent_1px),linear-gradient(to_bottom,#23272F_1px,transparent_1px)] bg-[size:2rem_2rem] [mask-image:radial-gradient(ellipse_60%_60%_at_50%_50%,#000_20%,transparent_100%)] opacity-20 pointer-events-none" />
+
+          <div className="relative w-full h-full flex flex-col items-center justify-between py-8">
+            
+            {/* Client Tier */}
+            <motion.div 
+              className="w-48 bg-card border border-border rounded-lg p-4 shadow-sm relative z-10 flex items-center gap-3"
+              whileHover={{ y: -2, borderColor: 'var(--primary)' }}
+            >
+              <Globe className="w-5 h-5 text-secondary-foreground" />
+              <div className="text-sm font-medium text-foreground">Client</div>
+            </motion.div>
+
+            {/* Down Arrow */}
+            <div className="w-px h-8 bg-border" />
+
+            {/* API Gateway */}
+            <motion.div 
+              className="w-56 bg-secondary border border-border rounded-lg p-4 shadow-sm relative z-10 flex items-center gap-3"
+              whileHover={{ y: -2, borderColor: 'var(--primary)' }}
+            >
+              <Shield className="w-5 h-5 text-secondary-foreground" />
+              <div className="text-sm font-medium text-foreground">API Gateway</div>
+            </motion.div>
+
+            {/* Down Arrow */}
+            <div className="w-px h-8 bg-border" />
+
+            {/* Services Tier */}
+            <div className="flex gap-6 w-full justify-center">
+              <motion.div 
+                className="w-40 bg-card border border-border rounded-lg p-4 shadow-sm flex flex-col items-center gap-2"
+                whileHover={{ y: -2, borderColor: 'var(--primary)' }}
+              >
+                <Server className="w-5 h-5 text-primary" />
+                <div className="text-xs font-medium text-foreground text-center">Auth Service</div>
+              </motion.div>
+              <motion.div 
+                className="w-40 bg-card border border-border rounded-lg p-4 shadow-sm flex flex-col items-center gap-2"
+                whileHover={{ y: -2, borderColor: 'var(--primary)' }}
+              >
+                <Server className="w-5 h-5 text-primary" />
+                <div className="text-xs font-medium text-foreground text-center">Core API</div>
+              </motion.div>
+            </div>
+
+            {/* Connecting Lines */}
+            <div className="flex justify-center w-full my-4">
+               <div className="w-px h-8 bg-border mr-10" />
+               <div className="w-px h-8 bg-border ml-10" />
+            </div>
+
+            {/* Database & Analytics */}
+            <div className="flex gap-6 w-full justify-center">
+              <motion.div 
+                className="w-40 bg-popover border border-border rounded-lg p-4 shadow-sm flex items-center gap-3"
+                whileHover={{ y: -2, borderColor: 'var(--primary)' }}
+              >
+                <Database className="w-5 h-5 text-secondary-foreground" />
+                <div className="text-xs font-medium text-foreground text-center">PostgreSQL</div>
+              </motion.div>
+              <motion.div 
+                className="w-40 bg-popover border border-border rounded-lg p-4 shadow-sm flex items-center gap-3"
+                whileHover={{ y: -2, borderColor: 'var(--primary)' }}
+              >
+                <Activity className="w-5 h-5 text-secondary-foreground" />
+                <div className="text-xs font-medium text-foreground text-center">Analytics</div>
+              </motion.div>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+
+      {/* Metrics Section */}
+      <motion.div 
+        variants={containerVariants}
+        initial="hidden"
+        animate="visible"
+        className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-32"
+      >
+        {[
+          { value: "15+", label: "Production Systems", desc: "Deployed and maintained" },
+          { value: "1+", label: "Years Experience", desc: "Building backend services" },
+          { value: "8.45", label: "CGPA", desc: "Academic excellence" },
+        ].map((stat, idx) => (
+          <motion.div
+            key={idx}
+            variants={itemVariants}
+            className="p-6 rounded-lg bg-card border border-border hover:border-border/80 transition-colors flex flex-col"
+          >
+            <div className="text-4xl font-bold text-foreground mb-2">
+              {stat.value}
+            </div>
+            <div className="text-sm font-medium text-foreground mb-1">{stat.label}</div>
+            <div className="text-sm text-secondary-foreground">{stat.desc}</div>
+          </motion.div>
+        ))}
+      </motion.div>
+    </section>
   )
 }

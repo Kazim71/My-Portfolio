@@ -1,7 +1,7 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Mail, Linkedin, Github, ExternalLink, Download } from "lucide-react"
+import { Mail, Linkedin, Github, MapPin, ArrowUpRight } from "lucide-react"
 
 export default function Contact() {
   const containerVariants = {
@@ -10,7 +10,6 @@ export default function Contact() {
       opacity: 1,
       transition: {
         staggerChildren: 0.1,
-        delayChildren: 0.2,
       },
     },
   }
@@ -20,107 +19,106 @@ export default function Contact() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.6 },
+      transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] },
     },
   }
 
-  const contactMethods = [
+  const links = [
     {
       icon: Mail,
       label: "Email",
       value: "mohammadkazim71@gmail.com",
       href: "mailto:mohammadkazim71@gmail.com",
-      color: "from-red-500 to-pink-500",
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      value: "Visit Profile",
+      value: "linkedin.com/in/mohammadkazim71",
       href: "https://linkedin.com/in/mohammadkazim71",
-      color: "from-blue-500 to-cyan-500",
       external: true,
     },
     {
       icon: Github,
       label: "GitHub",
-      value: "View Code",
+      value: "github.com/Kazim71",
       href: "https://github.com/Kazim71",
-      color: "from-gray-600 to-gray-800",
       external: true,
+    },
+    {
+      icon: MapPin,
+      label: "Location",
+      value: "India",
+      href: null,
     },
   ]
 
-  const handleDownloadResume = () => {
-    const a = document.createElement("a")
-    a.href = "/Kazim_Backend_Developer_Resume.pdf"
-    a.download = "Mohammad_Kazim_Resume.pdf"
-    document.body.appendChild(a)
-    a.click()
-    document.body.removeChild(a)
-  }
-
   return (
-    <section id="contact" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-background to-secondary/20">
-      <div className="max-w-4xl mx-auto text-center">
+    <section id="contact" className="py-24 px-6 lg:px-8 max-w-7xl mx-auto border-t border-border/50">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="mb-16"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={itemVariants}
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 text-balance">
-            Let's{" "}
-            <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
-              Connect
-            </span>
+          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-4">
+            Get in touch
           </h2>
-          <div className="w-20 h-1 bg-gradient-to-r from-primary to-accent rounded-full mx-auto mb-6" />
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            I'm always open to conversations about software engineering roles, backend and API work, or collaboration
-            on production systems. Feel free to reach out and let's build something reliable together.
+          <div className="w-12 h-1 bg-primary rounded-full mb-8" />
+          <p className="text-lg text-secondary-foreground max-w-md leading-relaxed">
+            I'm currently open to conversations about software engineering roles, backend systems, or collaboration on production applications.
           </p>
         </motion.div>
 
-        
-
         <motion.div
-          className="grid md:grid-cols-3 gap-6"
+          className="flex flex-col space-y-6"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
         >
-          {contactMethods.map((method) => {
-            const Icon = method.icon
+          {links.map((link) => {
+            const Icon = link.icon
+            
+            const content = (
+              <>
+                <div className="flex items-center gap-4">
+                  <div className="text-secondary-foreground group-hover:text-primary transition-colors">
+                    <Icon className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="text-sm font-medium text-foreground">{link.label}</p>
+                    <p className="text-sm text-secondary-foreground mt-0.5">{link.value}</p>
+                  </div>
+                </div>
+                {link.href && (
+                  <ArrowUpRight className="w-4 h-4 text-secondary-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+                )}
+              </>
+            )
+
             return (
-              <motion.div key={method.label} variants={itemVariants}>
-                <motion.div
-                  className="p-6 bg-card rounded-lg border border-border hover:border-primary transition-all hover:shadow-lg h-full"
-                  whileHover={{ y: -8 }}
-                >
-                  <motion.div
-                    className={`w-12 h-12 rounded-lg bg-gradient-to-br ${method.color} flex items-center justify-center mx-auto mb-4`}
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                  >
-                    <Icon className="w-6 h-6 text-white" aria-hidden="true" />
-                  </motion.div>
-                  <h3 className="font-bold mb-3 text-foreground">{method.label}</h3>
+              <motion.div key={link.label} variants={itemVariants}>
+                {link.href ? (
                   <a
-                    href={method.href}
-                    target={method.external ? "_blank" : undefined}
-                    rel={method.external ? "noopener noreferrer" : undefined}
-                    className="text-primary hover:underline text-sm flex items-center justify-center gap-1 focus:outline-none focus:ring-2 focus:ring-primary focus:rounded"
-                    aria-label={method.external ? `Visit ${method.label} profile (opens in new window)` : undefined}
+                    href={link.href}
+                    target={link.external ? "_blank" : undefined}
+                    rel={link.external ? "noopener noreferrer" : undefined}
+                    className="group flex items-center justify-between p-4 bg-card border border-border rounded-lg hover:border-primary/50 transition-colors"
                   >
-                    {method.value}
-                    {method.external && <ExternalLink className="w-3 h-3" aria-hidden="true" />}
+                    {content}
                   </a>
-                </motion.div>
+                ) : (
+                  <div className="flex items-center justify-between p-4 bg-card border border-border rounded-lg">
+                    {content}
+                  </div>
+                )}
               </motion.div>
             )
           })}
         </motion.div>
+
       </div>
     </section>
   )
