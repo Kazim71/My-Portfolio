@@ -1,135 +1,138 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { CheckCircle2, Server, Database, Activity, GitBranch } from "lucide-react"
+import { ArrowUpRight, Zap } from "lucide-react"
+
+function WavySvg() {
+  return (
+    <svg viewBox="0 0 140 24" fill="none" className="mx-auto mt-3 h-5 w-32 text-pink" aria-hidden="true">
+      <path d="M2 12c10-12 20 12 30 0s20-12 30 0 20 12 30 0 20-12 30 0" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
+    </svg>
+  )
+}
+
+const projects = [
+  {
+    num: "01",
+    category: "Enterprise AI",
+    title: "AirLynk — Cloud-Native AI-Ready Platform",
+    desc: "Cloud-native transportation platform supporting real-time booking, authentication, pricing, notifications, and operational dashboards for 300+ service locations with 500+ daily transactions.",
+    stack: ["Python", "FastAPI", "GraphQL", "React", "PostgreSQL", "Redis", "RabbitMQ", "Docker"],
+    impact: "300+ locations, 500+ daily transactions",
+    href: "https://airportlimolink.ca",
+  },
+  {
+    num: "02",
+    category: "AI Agent",
+    title: "GrowScience — Enterprise AI Agent",
+    desc: "Enterprise AI agent architecture using prompt engineering, RAG, and AI safety guardrails across 15+ prompt frameworks integrating 200+ documents for domain-specific recommendations.",
+    stack: ["Python", "OpenAI", "Prompt Engineering", "RAG", "AI Safety"],
+    impact: "15+ prompt frameworks, 200+ documents",
+    href: "https://chatbot.senadvertising.com/",
+  },
+  {
+    num: "03",
+    category: "AI SaaS",
+    title: "StructuraUI — AI-Powered UI Generation",
+    desc: "AI SaaS platform using Google Gemini to generate editable UI layouts from natural language prompts, supporting 20+ component types and reducing design-to-code time by 70%.",
+    stack: ["Next.js", "Gemini", "TypeScript", "React"],
+    impact: "70% faster design-to-code",
+    href: "https://github.com/Kazim71/StructuraUI",
+  },
+  {
+    num: "04",
+    category: "Security & Compliance",
+    title: "Compliance Automation & Asset Monitoring",
+    desc: "Compliance monitoring platform integrating multi-source asset discovery pipelines with policy-as-code validation frameworks, continuous configuration compliance checks, and posture reports aligned to NIST and SOC 2 control requirements.",
+    stack: ["Python", "Grafana", "PostgreSQL", "Docker", "AWS", "Policy-as-Code"],
+    impact: "NIST & SOC 2 aligned automation",
+    href: "https://github.com/Kazim71",
+  },
+  {
+    num: "05",
+    category: "Data Engineering",
+    title: "ETL Pipeline & Observability System",
+    desc: "ETL pipelines aggregating multi-source operational data into PostgreSQL with Grafana dashboards providing real-time visibility into system health, data quality posture, and compliance metrics across 10,000+ catalog items.",
+    stack: ["Node.js", "PostgreSQL", "Grafana", "Docker", "GitHub Actions"],
+    impact: "50% query latency reduction, 10,000+ items",
+    href: "https://spacesbyu.com",
+  },
+]
 
 export default function Projects() {
-  const caseStudies = [
-    {
-      title: "Airport Reservation & Dispatch Management Platform",
-      problem: "Managing complex booking operations and driver dispatches across 100+ geographical locations.",
-      solution: "Built comprehensive backend workflows, automation pipelines, robust data validation layers, and operational reporting systems to handle high-throughput booking logic.",
-      impact: "Automated the onboarding and management of 100+ service locations, significantly reducing manual operational effort and data entry errors.",
-      stack: ["Python", "PostgreSQL", "REST APIs", "Automation"],
-      architecture: [
-        { name: "Booking Engine", icon: <Server className="w-4 h-4" /> },
-        { name: "Validation Layer", icon: <CheckCircle2 className="w-4 h-4" /> },
-        { name: "Reporting Pipeline", icon: <Activity className="w-4 h-4" /> },
-        { name: "Data Processing", icon: <Database className="w-4 h-4" /> },
-      ],
-    },
-    {
-      title: "E-Commerce Catalog & Content Management Platform",
-      problem: "Scaling a dynamic content management system to support complex relationships across hundreds of products and categories efficiently.",
-      solution: "Developed reusable data models, administrative workflows, and optimized database-driven filtering and search APIs for performant catalog management.",
-      impact: "Improved catalog retrieval performance, search efficiency, and system maintainability for large-scale e-commerce operations.",
-      stack: ["Node.js", "MySQL", "REST APIs", "Data Modeling"],
-      architecture: [
-        { name: "Product Catalog", icon: <Database className="w-4 h-4" /> },
-        { name: "Search & Filtering", icon: <Activity className="w-4 h-4" /> },
-        { name: "Admin Workflows", icon: <GitBranch className="w-4 h-4" /> },
-        { name: "API Layer", icon: <Server className="w-4 h-4" /> },
-      ],
-    },
-  ]
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] },
-    },
-  }
-
   return (
-    <section id="projects" className="py-24 px-6 lg:px-8 max-w-7xl mx-auto border-t border-border/50">
-      <div className="mb-20">
-        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-4">
-          Engineering Case Studies
-        </h2>
-        <div className="w-12 h-1 bg-primary rounded-full" />
-      </div>
+    <section id="projects" className="border-t-2 border-foreground bg-secondary px-5 py-20 md:px-10 md:py-28">
+      <div className="mx-auto max-w-7xl">
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.5 }}
+          className="text-center"
+        >
+          <span className="inline-block rounded-full border-2 border-foreground px-4 py-1 text-xs font-bold uppercase tracking-widest text-foreground">
+            Case Studies
+          </span>
+          <h2 className="mt-4 font-display text-4xl leading-[0.95] tracking-tight text-foreground md:text-6xl">
+            Featured Projects
+          </h2>
+          <WavySvg />
+        </motion.div>
 
-      <motion.div
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-        className="space-y-24"
-      >
-        {caseStudies.map((study, idx) => (
-          <motion.div key={idx} variants={itemVariants} className="relative group">
-            {/* Connecting line between case studies if not the last one */}
-            {idx !== caseStudies.length - 1 && (
-              <div className="hidden lg:block absolute -bottom-12 left-8 w-px h-12 bg-border/50" />
-            )}
-            
-            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16">
-              
-              {/* Left Column: Context & Overview */}
-              <div className="lg:col-span-5 space-y-8">
-                <div>
-                  <h3 className="text-2xl font-bold text-foreground mb-4 leading-tight group-hover:text-primary transition-colors">
-                    {study.title}
-                  </h3>
-                  <div className="flex flex-wrap gap-2 mb-6">
-                    {study.stack.map(tech => (
-                      <span key={tech} className="px-2.5 py-1 text-xs font-medium bg-secondary border border-border text-foreground rounded-md">
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
+        <div className="mt-14 grid gap-6 md:grid-cols-2">
+          {projects.map((project, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+            >
+              <div className="group flex h-full flex-col rounded-3xl border-2 border-foreground bg-card p-7 transition-transform hover:-translate-y-1.5 hover:shadow-brutal-lg md:p-9">
+                <div className="flex items-start justify-between">
+                  <span className="font-display text-5xl text-foreground/15">{project.num}</span>
+                  <a
+                    href={project.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex h-11 w-11 items-center justify-center rounded-full border-2 border-foreground bg-background transition-colors group-hover:bg-mint"
+                  >
+                    <ArrowUpRight className="h-5 w-5 text-foreground" aria-hidden="true" />
+                  </a>
                 </div>
 
-                <div className="space-y-6">
-                  <div>
-                    <h4 className="text-sm font-bold text-foreground uppercase tracking-wider mb-2">Problem</h4>
-                    <p className="text-secondary-foreground text-sm leading-relaxed">{study.problem}</p>
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-foreground uppercase tracking-wider mb-2">Solution</h4>
-                    <p className="text-secondary-foreground text-sm leading-relaxed">{study.solution}</p>
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-bold text-primary uppercase tracking-wider mb-2">Impact</h4>
-                    <p className="text-foreground text-sm leading-relaxed font-medium">{study.impact}</p>
-                  </div>
-                </div>
-              </div>
+                <span className="mt-2 inline-block w-fit rounded-full bg-pink px-3 py-1 text-xs font-bold text-foreground">
+                  {project.category}
+                </span>
 
-              {/* Right Column: Architecture Highlights */}
-              <div className="lg:col-span-7 bg-card border border-border rounded-xl p-8 flex flex-col justify-center">
-                <h4 className="text-base font-semibold text-foreground mb-6">Architecture Highlights</h4>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {study.architecture.map((arch, archIdx) => (
-                    <div 
-                      key={archIdx} 
-                      className="p-4 bg-background border border-border/50 rounded-lg flex items-center gap-3 hover:border-primary/50 transition-colors"
+                <h3 className="mt-3 font-display text-2xl tracking-tight text-foreground md:text-3xl">
+                  {project.title}
+                </h3>
+
+                <p className="mt-2 text-sm text-muted-foreground">{project.desc}</p>
+
+                <div className="mt-5 flex flex-wrap gap-2">
+                  {project.stack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="rounded-md border border-foreground bg-background px-2.5 py-1 text-xs font-semibold text-foreground"
                     >
-                      <div className="text-primary bg-primary/10 p-2 rounded-md">
-                        {arch.icon}
-                      </div>
-                      <span className="font-medium text-sm text-foreground">{arch.name}</span>
-                    </div>
+                      {tech}
+                    </span>
                   ))}
                 </div>
-              </div>
 
-            </div>
-          </motion.div>
-        ))}
-      </motion.div>
+                <div className="mt-auto pt-6">
+                  <div className="flex items-center gap-2 rounded-2xl bg-foreground px-4 py-3 text-sm font-bold text-background">
+                    <Zap className="h-4 w-4 text-sun" aria-hidden="true" />
+                    {project.impact}
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
     </section>
   )
 }

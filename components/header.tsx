@@ -21,8 +21,11 @@ export default function Header() {
     { href: "#about", label: "About" },
     { href: "#experience", label: "Experience" },
     { href: "#projects", label: "Projects" },
-    { href: "#engineering", label: "Engineering" },
-    { href: "#skills", label: "Skills" },
+    { href: "#events-preview", label: "Events" },
+    { href: "#skills", label: "Stack" },
+    { href: "#certifications", label: "Certifications" },
+    { href: "#faq", label: "FAQ" },
+    { href: "#blog", label: "Blog" },
     { href: "#contact", label: "Contact" },
   ]
 
@@ -30,91 +33,93 @@ export default function Header() {
     <>
       <a
         href="#main-content"
-        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:p-2 focus:bg-primary focus:text-primary-foreground focus:rounded"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:p-2 focus:bg-foreground focus:text-background focus:rounded"
       >
         Skip to main content
       </a>
 
       <header
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "bg-background/80 backdrop-blur-md border-b border-border/50 shadow-sm"
-            : "bg-transparent border-transparent"
+            ? "bg-background/90 backdrop-blur-md border-b-2 border-foreground"
+            : "bg-background/90 backdrop-blur-md border-b-2 border-foreground"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 md:h-20">
-            {/* Logo */}
-            <Link
-              href="#"
-              className="flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-primary focus:rounded"
-            >
-              <span className="font-mono font-bold text-lg tracking-tight text-foreground hover:text-primary transition-colors">
-                kazim.dev
-              </span>
-            </Link>
+        <nav className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-10">
+          <Link
+            href="#"
+            className="flex items-center gap-2"
+            title="Mohammad Kazim — Software Engineer"
+          >
+            <span className="flex h-9 w-9 items-center justify-center rounded-md border-2 border-foreground bg-foreground text-background font-display text-lg">
+              MK
+            </span>
+            <span className="font-display text-2xl tracking-wide text-foreground">
+              MOHAMMAD KAZIM
+            </span>
+          </Link>
 
-            {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center gap-8" aria-label="Main navigation">
-              {navLinks.map((link) => (
+          <ul className="hidden items-center gap-6 lg:flex lg:gap-8">
+            {navLinks.map((link) => (
+              <li key={link.href}>
                 <a
-                  key={link.href}
                   href={link.href}
-                  className="text-sm font-medium text-secondary-foreground hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:rounded px-1 py-1"
+                  className="relative text-sm font-semibold text-foreground after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-foreground after:transition-all hover:after:w-full"
                 >
                   {link.label}
                 </a>
-              ))}
-              <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-sm font-medium text-primary border border-primary/30 hover:bg-primary/10 px-4 py-2 rounded-md transition-colors"
-              >
-                Resume
-              </a>
-            </nav>
+              </li>
+            ))}
+          </ul>
 
-            {/* Right Actions (Theme Toggle & Mobile Menu Button) */}
-            <div className="flex items-center gap-4">
-              <ThemeToggle />
-              
-              <button
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="p-2 text-foreground hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary md:hidden"
-                aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-                aria-expanded={isMenuOpen}
-              >
-                {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-              </button>
-            </div>
+          <div className="flex items-center gap-3">
+            <ThemeToggle />
+            <a
+              href="#contact"
+              className="hidden rounded-full bg-foreground px-6 py-3 text-sm font-bold text-background transition-transform hover:-translate-y-0.5 lg:inline-flex"
+            >
+              Get In Touch
+            </a>
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="lg:hidden"
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMenuOpen}
+            >
+              {isMenuOpen ? <X className="h-7 w-7" /> : <Menu className="h-7 w-7" />}
+            </button>
           </div>
+        </nav>
 
-          {/* Mobile Navigation */}
-          {isMenuOpen && (
-            <nav className="md:hidden pb-6 pt-2 flex flex-col gap-4 border-t border-border/50" aria-label="Mobile navigation">
+        {isMenuOpen && (
+          <nav
+            className="lg:hidden border-t-2 border-foreground bg-background px-5 pb-6 pt-4"
+            aria-label="Mobile navigation"
+          >
+            <ul className="flex flex-col gap-4">
               {navLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="text-base font-semibold text-foreground"
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+              <li>
                 <a
-                  key={link.href}
-                  href={link.href}
-                  className="text-base font-medium text-secondary-foreground hover:text-primary transition-colors"
+                  href="#contact"
+                  className="inline-block rounded-full bg-foreground px-6 py-3 text-sm font-bold text-background mt-2"
                   onClick={() => setIsMenuOpen(false)}
                 >
-                  {link.label}
+                  Get In Touch
                 </a>
-              ))}
-              <a
-                href="/resume.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-base font-medium text-primary mt-2"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Resume
-              </a>
-            </nav>
-          )}
-        </div>
+              </li>
+            </ul>
+          </nav>
+        )}
       </header>
     </>
   )

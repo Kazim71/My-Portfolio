@@ -1,124 +1,135 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Mail, Linkedin, Github, MapPin, ArrowUpRight } from "lucide-react"
+import { Mail, Linkedin, Github, ArrowUpRight } from "lucide-react"
+
+const contacts = [
+  {
+    icon: Mail,
+    label: "Email",
+    value: "mohammadkazim71@gmail.com",
+    href: "mailto:mohammadkazim71@gmail.com",
+  },
+  {
+    icon: Linkedin,
+    label: "LinkedIn",
+    value: "linkedin.com/in/mohammadkazim71",
+    href: "https://linkedin.com/in/mohammadkazim71",
+  },
+  {
+    icon: Github,
+    label: "GitHub",
+    value: "github.com/Kazim71",
+    href: "https://github.com/Kazim71",
+  },
+]
+
+const interests = [
+  "AI Engineering",
+  "Backend Systems",
+  "LLM Applications",
+  "Agentic Automation",
+  "Enterprise AI",
+  "Open Source",
+  "Full-time Roles",
+  "Freelance Opportunities",
+]
 
 export default function Contact() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] },
-    },
-  }
-
-  const links = [
-    {
-      icon: Mail,
-      label: "Email",
-      value: "mohammadkazim71@gmail.com",
-      href: "mailto:mohammadkazim71@gmail.com",
-    },
-    {
-      icon: Linkedin,
-      label: "LinkedIn",
-      value: "linkedin.com/in/mohammadkazim71",
-      href: "https://linkedin.com/in/mohammadkazim71",
-      external: true,
-    },
-    {
-      icon: Github,
-      label: "GitHub",
-      value: "github.com/Kazim71",
-      href: "https://github.com/Kazim71",
-      external: true,
-    },
-    {
-      icon: MapPin,
-      label: "Location",
-      value: "India",
-      href: null,
-    },
-  ]
-
   return (
-    <section id="contact" className="py-24 px-6 lg:px-8 max-w-7xl mx-auto border-t border-border/50">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-        
+    <section id="contact" className="relative overflow-hidden px-5 py-20 md:px-10 md:py-28">
+      <svg
+        viewBox="0 0 120 120"
+        fill="none"
+        className="absolute left-[6%] top-24 hidden h-24 w-24 rotate-90 text-foreground lg:block"
+        aria-hidden="true"
+      >
+        <path d="M8 14c34 6 66 30 74 66" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
+        <path d="M62 78c8 4 16 6 22 4M84 82c-2-8-4-14-2-22" stroke="currentColor" strokeWidth="4" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+
+      <div className="mx-auto max-w-5xl">
         <motion.div
-          initial="hidden"
-          whileInView="visible"
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-100px" }}
-          variants={itemVariants}
+          transition={{ duration: 0.5 }}
+          className="text-center"
         >
-          <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-4">
-            Get in touch
+          <span className="inline-block rounded-full border-2 border-foreground px-4 py-1 text-xs font-bold uppercase tracking-widest text-foreground">
+            Let&apos;s Connect
+          </span>
+          <h2 className="mt-4 font-display text-4xl leading-[1.1] tracking-tight text-foreground md:text-7xl md:leading-[0.95]">
+            LET&apos;S BUILD SOMETHING{" "}
+            <span className="box-decoration-clone bg-pink px-2 leading-tight">GREAT</span>
           </h2>
-          <div className="w-12 h-1 bg-primary rounded-full mb-8" />
-          <p className="text-lg text-secondary-foreground max-w-md leading-relaxed">
-            I'm currently open to conversations about software engineering roles, backend systems, or collaboration on production applications.
+          <p className="mx-auto mt-6 max-w-2xl text-muted-foreground">
+            I&apos;m always interested in discussing AI engineering, backend systems,
+            LLM applications, freelance opportunities and full-time roles.
           </p>
         </motion.div>
 
-        <motion.div
-          className="flex flex-col space-y-6"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-100px" }}
-        >
-          {links.map((link) => {
-            const Icon = link.icon
-            
-            const content = (
-              <>
-                <div className="flex items-center gap-4">
-                  <div className="text-secondary-foreground group-hover:text-primary transition-colors">
-                    <Icon className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-medium text-foreground">{link.label}</p>
-                    <p className="text-sm text-secondary-foreground mt-0.5">{link.value}</p>
-                  </div>
-                </div>
-                {link.href && (
-                  <ArrowUpRight className="w-4 h-4 text-secondary-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
-                )}
-              </>
-            )
-
+        <div className="mt-12 grid gap-5 md:grid-cols-3">
+          {contacts.map((c, idx) => {
+            const Icon = c.icon
             return (
-              <motion.div key={link.label} variants={itemVariants}>
-                {link.href ? (
-                  <a
-                    href={link.href}
-                    target={link.external ? "_blank" : undefined}
-                    rel={link.external ? "noopener noreferrer" : undefined}
-                    className="group flex items-center justify-between p-4 bg-card border border-border rounded-lg hover:border-primary/50 transition-colors"
-                  >
-                    {content}
-                  </a>
-                ) : (
-                  <div className="flex items-center justify-between p-4 bg-card border border-border rounded-lg">
-                    {content}
+              <motion.div
+                key={c.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+              >
+                <a href={c.href} target="_blank" rel="noopener noreferrer" className="block h-full">
+                  <div className="relative flex h-full flex-col rounded-3xl border-2 border-foreground bg-card p-7 transition-transform hover:-translate-y-1.5 hover:shadow-brutal">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-foreground bg-mint">
+                      <Icon className="h-5 w-5 text-foreground" aria-hidden="true" />
+                    </span>
+                    <span className="mt-5 text-xs font-bold uppercase tracking-widest text-muted-foreground">
+                      {c.label}
+                    </span>
+                    <span className="mt-1 break-words font-semibold text-foreground">{c.value}</span>
                   </div>
-                )}
+                </a>
               </motion.div>
             )
           })}
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5, delay: 0.2 }}
+          className="mt-8 flex flex-wrap justify-center gap-3"
+        >
+          {interests.map((tag) => (
+            <span
+              key={tag}
+              className="rounded-full border-2 border-foreground bg-background px-4 py-2 text-sm font-semibold text-foreground"
+            >
+              {tag}
+            </span>
+          ))}
         </motion.div>
 
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          className="mt-12 text-center"
+        >
+          <a
+            href="https://linkedin.com/in/mohammadkazim71"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 rounded-full bg-foreground px-9 py-4 text-base font-bold text-background transition-transform hover:-translate-y-1"
+          >
+            Say Hello
+            <ArrowUpRight className="h-5 w-5" aria-hidden="true" />
+          </a>
+        </motion.div>
       </div>
     </section>
   )

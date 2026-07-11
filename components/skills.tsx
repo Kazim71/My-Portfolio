@@ -1,103 +1,141 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Code2, Server, Database, Cloud, Palette, Cpu } from "lucide-react"
+import { Target } from "lucide-react"
+
+function WavySvg() {
+  return (
+    <svg viewBox="0 0 140 24" fill="none" className="mx-auto mt-3 h-5 w-32 text-pink" aria-hidden="true">
+      <path d="M2 12c10-12 20 12 30 0s20-12 30 0 20 12 30 0 20-12 30 0" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
+    </svg>
+  )
+}
+
+const domains = [
+  {
+    title: "AI Engineering",
+    skills: ["Agentic AI", "LLM Applications", "Prompt Engineering", "RAG", "AI Safety", "AI Evaluation", "OpenAI", "Claude", "Gemini"],
+  },
+  {
+    title: "AI Automation",
+    skills: ["n8n", "Agentic Workflows", "Workflow Orchestration", "Webhooks", "LLM Tool-Calling", "AI Agent Frameworks"],
+  },
+  {
+    title: "Backend",
+    skills: ["Python", "FastAPI", "Node.js", "Express.js", "REST APIs", "GraphQL APIs", "JWT", "OAuth2", "WebSockets"],
+  },
+  {
+    title: "Frontend",
+    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+  },
+  {
+    title: "Databases",
+    skills: ["PostgreSQL", "MySQL", "Redis", "MongoDB"],
+  },
+  {
+    title: "Cloud & DevOps",
+    skills: ["Docker", "GitHub Actions", "RabbitMQ", "Linux", "CI/CD", "AWS"],
+  },
+]
+
+const specializations = [
+  "AI-Powered Applications",
+  "Agentic Automation",
+  "LLM Integration",
+  "Backend Systems",
+  "Workflow Automation",
+  "Production Deployment",
+  "Cloud Infrastructure",
+  "System Design",
+]
 
 export default function Skills() {
-  const domains = [
-    {
-      title: "Languages",
-      icon: Code2,
-      skills: ["Python", "JavaScript", "SQL", "PHP"],
-    },
-    {
-      title: "Backend",
-      icon: Server,
-      skills: ["FastAPI", "Node.js", "Express.js", "REST APIs", "Authentication"],
-    },
-    {
-      title: "Databases",
-      icon: Database,
-      skills: ["PostgreSQL", "MySQL", "Indexing", "Query Optimization"],
-    },
-    {
-      title: "Cloud",
-      icon: Cloud,
-      skills: ["AWS EC2", "Docker", "Linux"],
-    },
-    {
-      title: "Frontend",
-      icon: Palette,
-      skills: ["React", "Next.js", "Tailwind"],
-    },
-    {
-      title: "Engineering",
-      icon: Cpu,
-      skills: ["Git", "Testing", "Debugging", "Agile"],
-    },
-  ]
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5, ease: [0.25, 0.1, 0.25, 1] },
-    },
-  }
-
   return (
-    <section id="skills" className="py-24 px-6 lg:px-8 max-w-7xl mx-auto border-t border-border/50">
-      <div className="mb-16">
-        <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-4">
-          Technical Skills
-        </h2>
-        <div className="w-12 h-1 bg-primary rounded-full" />
-      </div>
+    <>
+      <section id="skills" className="px-5 py-20 md:px-10 md:py-28">
+        <div className="mx-auto max-w-7xl">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5 }}
+            className="text-center"
+          >
+            <span className="inline-block rounded-full border-2 border-foreground px-4 py-1 text-xs font-bold uppercase tracking-widest text-foreground">
+              Toolbox
+            </span>
+            <h2 className="mt-4 font-display text-4xl leading-[0.95] tracking-tight text-foreground md:text-6xl">
+              Tech Stack
+            </h2>
+            <WavySvg />
+          </motion.div>
 
-      <motion.div
-        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: "-100px" }}
-      >
-        {domains.map((domain, idx) => {
-          const Icon = domain.icon
-          return (
-            <motion.div
-              key={domain.title}
-              variants={itemVariants}
-              className="flex flex-col"
-            >
-              <div className="flex items-center gap-3 mb-4 pb-2 border-b border-border/50">
-                <Icon className="w-5 h-5 text-secondary-foreground" />
-                <h3 className="font-semibold text-lg text-foreground">{domain.title}</h3>
-              </div>
-              <ul className="flex flex-wrap gap-2 mt-2">
-                {domain.skills.map((skill) => (
-                  <li
-                    key={skill}
-                    className="px-3 py-1.5 bg-secondary border border-border rounded-md text-sm font-medium text-foreground transition-colors hover:border-primary/50"
-                  >
-                    {skill}
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
-          )
-        })}
-      </motion.div>
-    </section>
+          <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            {domains.map((domain, idx) => (
+              <motion.div
+                key={domain.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: idx * 0.08 }}
+              >
+                <div className="h-full rounded-3xl border-2 border-foreground bg-card p-7">
+                  <h3 className="font-display text-2xl tracking-tight text-foreground">
+                    {domain.title}
+                  </h3>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    {domain.skills.map((skill) => (
+                      <span
+                        key={skill}
+                        className="rounded-full border-2 border-foreground bg-background px-3 py-1.5 text-sm font-semibold text-foreground transition-colors hover:bg-mint"
+                      >
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y-2 border-foreground bg-mint px-5 py-20 md:px-10 md:py-28">
+        <div className="mx-auto max-w-7xl">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5 }}
+            className="text-center"
+          >
+            <span className="inline-block rounded-full border-2 border-foreground px-4 py-1 text-xs font-bold uppercase tracking-widest text-foreground">
+              Focus Areas
+            </span>
+            <h2 className="mt-4 font-display text-4xl leading-[0.95] tracking-tight text-foreground md:text-6xl">
+              Specialization
+            </h2>
+            <WavySvg />
+          </motion.div>
+
+          <div className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {specializations.map((spec, idx) => (
+              <motion.div
+                key={spec}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: idx * 0.06 }}
+              >
+                <div className="flex h-full items-center gap-3 rounded-2xl border-2 border-foreground bg-background p-5 transition-transform hover:-translate-y-1 hover:shadow-brutal">
+                  <Target className="h-5 w-5 shrink-0 text-foreground" aria-hidden="true" />
+                  <span className="font-semibold text-foreground">{spec}</span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+    </>
   )
 }

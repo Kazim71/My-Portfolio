@@ -1,144 +1,138 @@
 "use client"
 
 import { motion } from "framer-motion"
+import { MapPin } from "lucide-react"
+
+function WavySvg() {
+  return (
+    <svg viewBox="0 0 140 24" fill="none" className="mx-auto mt-3 h-5 w-32 text-pink" aria-hidden="true">
+      <path d="M2 12c10-12 20 12 30 0s20-12 30 0 20 12 30 0 20-12 30 0" stroke="currentColor" strokeWidth="4" strokeLinecap="round" />
+    </svg>
+  )
+}
+
+const experiences = [
+  {
+    role: "Software Engineer — AI Systems & Automation",
+    company: "EZ Rankings",
+    period: "March 2026 – Present",
+    location: "Noida, India",
+    highlights: [
+      "Designed and implemented AI-enabled backend services and APIs supporting customer-facing applications across 15+ business workflows",
+      "Built agentic automation workflows using n8n, integrating LLM nodes, webhooks, and third-party APIs",
+      "Collaborated with stakeholders to translate operational challenges into scalable AI-driven workflow solutions, reducing manual effort by 40%",
+      "Enabled self-service dashboards used by 50+ stakeholders",
+    ],
+  },
+  {
+    role: "Software Engineer — Backend & Infrastructure",
+    company: "Clay Brains",
+    period: "February 2025 – February 2026",
+    location: "Delhi, India",
+    highlights: [
+      "Designed production backend services and data pipelines on AWS EC2 with 99.9% uptime",
+      "Improved system query performance by 60% through database optimization",
+      "Built secure authentication and authorization systems (JWT, RBAC)",
+      "Developed real-time monitoring solutions, reducing issue-detection time by 30%",
+    ],
+  },
+]
+
+const education = [
+  {
+    degree: "B.Tech, Electronics & Communication Engineering",
+    institution: "Bharati Vidyapeeth Deemed University, Pune",
+    period: "2021 – 2025",
+    detail: "CGPA: 8.45/10",
+  },
+]
 
 export default function Experience() {
-  const experiences = [
-    {
-      role: "Backend Developer",
-      company: "EZ Rankings",
-      period: "Mar 2026 – Present",
-      location: "India",
-      highlights: [
-        "Developed and maintained backend workflows, APIs, and database-driven applications across 15+ production systems.",
-        "Built Python automation utilities for CSV ingestion, data validation, reporting, and workflow automation.",
-        "Designed and integrated REST APIs, business validation layers, and data-processing workflows.",
-        "Investigated and resolved production incidents involving API failures, deployment regressions, and database inconsistencies.",
-      ],
-    },
-    {
-      role: "Junior Web Developer",
-      company: "Clay Brains",
-      period: "Feb 2025 – Feb 2026",
-      location: "India",
-      highlights: [
-        "Developed backend modules, reusable services, and data-driven features for production applications.",
-        "Improved database performance through SQL query optimization, indexing strategies, and execution plan analysis.",
-        "Managed Linux-based cloud infrastructure including AWS EC2, SSL configuration, DNS management, and deployment workflows.",
-        "Participated in debugging, testing, code maintenance, and release activities across multiple projects.",
-      ],
-    },
-  ]
-
-  const education = [
-    {
-      degree: "B.Tech, Electronics & Communication Engineering",
-      institution: "Bharati Vidyapeeth Deemed University",
-      period: "2021 – 2025",
-      detail: "CGPA: 8.45",
-    },
-  ]
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-      },
-    },
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: [0.25, 0.1, 0.25, 1] },
-    },
-  }
-
   return (
-    <section id="experience" className="py-24 px-6 lg:px-8 max-w-7xl mx-auto border-t border-border/50">
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
-        
-        {/* Left Column: Experience */}
-        <div className="lg:col-span-8">
-          <div className="mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-4">
-              Experience
-            </h2>
-            <div className="w-12 h-1 bg-primary rounded-full" />
-          </div>
+    <section id="experience" className="px-5 py-20 md:px-10 md:py-28">
+      <div className="mx-auto max-w-5xl">
+        <motion.div
+          initial={{ opacity: 0, y: 15 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.5 }}
+          className="text-center"
+        >
+          <span className="inline-block rounded-full border-2 border-foreground px-4 py-1 text-xs font-bold uppercase tracking-widest text-foreground">
+            Career
+          </span>
+          <h2 className="mt-4 font-display text-4xl leading-[0.95] tracking-tight text-foreground md:text-6xl">
+            Professional Experience
+          </h2>
+          <WavySvg />
+        </motion.div>
 
-          <motion.div
-            className="space-y-12"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            {experiences.map((exp, index) => (
-              <motion.div key={index} variants={itemVariants} className="relative pl-6 sm:pl-8 group">
-                {/* Timeline Line */}
-                <div className="absolute top-2 bottom-0 left-[3px] w-[2px] bg-border group-last:bg-transparent" />
-                
-                {/* Timeline Node */}
-                <div className="absolute top-2 left-0 w-2 h-2 rounded-full bg-primary ring-4 ring-background" />
-
-                <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between mb-4">
+        <div className="mt-14 space-y-8">
+          {experiences.map((exp, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: idx * 0.1 }}
+            >
+              <div className="rounded-3xl border-2 border-foreground bg-card p-7 transition-shadow hover:shadow-brutal md:p-9">
+                <div className="flex flex-wrap items-start justify-between gap-3">
                   <div>
-                    <h3 className="font-semibold text-lg text-foreground">{exp.role}</h3>
-                    <p className="text-primary text-sm font-medium mt-1">{exp.company}</p>
+                    <h3 className="font-display text-2xl tracking-tight text-foreground md:text-3xl">
+                      {exp.role}
+                    </h3>
+                    <p className="mt-1 text-lg font-semibold text-foreground">{exp.company}</p>
                   </div>
-                  <div className="mt-2 sm:mt-0 text-sm font-medium text-secondary-foreground whitespace-nowrap">
-                    {exp.period}
+                  <div className="text-right">
+                    <span className="inline-block rounded-full bg-mint px-4 py-1 text-xs font-bold text-foreground">
+                      {exp.period}
+                    </span>
+                    <p className="mt-2 flex items-center justify-end gap-1 text-sm text-muted-foreground">
+                      <MapPin className="h-3.5 w-3.5" aria-hidden="true" />
+                      {exp.location}
+                    </p>
                   </div>
                 </div>
-
-                <ul className="space-y-3 mt-4">
-                  {exp.highlights.map((highlight, i) => (
-                    <li key={i} className="text-sm text-secondary-foreground leading-relaxed flex items-start gap-3">
-                      <span className="text-primary/50 select-none mt-1">—</span>
-                      <span>{highlight}</span>
+                <ul className="mt-5 grid gap-2 sm:grid-cols-2">
+                  {exp.highlights.map((h, i) => (
+                    <li key={i} className="flex gap-2 text-sm text-muted-foreground">
+                      <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-pink" />
+                      {h}
                     </li>
                   ))}
                 </ul>
-              </motion.div>
-            ))}
-          </motion.div>
+              </div>
+            </motion.div>
+          ))}
+
+          {education.map((edu, idx) => (
+            <motion.div
+              key={idx}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+            >
+              <div className="rounded-3xl border-2 border-foreground bg-card p-7 transition-shadow hover:shadow-brutal md:p-9">
+                <div className="flex flex-wrap items-start justify-between gap-3">
+                  <div>
+                    <h3 className="font-display text-2xl tracking-tight text-foreground md:text-3xl">
+                      {edu.degree}
+                    </h3>
+                    <p className="mt-1 text-lg font-semibold text-foreground">{edu.institution}</p>
+                  </div>
+                  <div className="text-right">
+                    <span className="inline-block rounded-full bg-sun px-4 py-1 text-xs font-bold text-foreground">
+                      {edu.period}
+                    </span>
+                  </div>
+                </div>
+                <p className="mt-4 text-sm font-semibold text-foreground">{edu.detail}</p>
+              </div>
+            </motion.div>
+          ))}
         </div>
-
-        {/* Right Column: Education */}
-        <div className="lg:col-span-4">
-          <div className="mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold tracking-tight text-foreground mb-4">
-              Education
-            </h2>
-            <div className="w-12 h-1 bg-primary rounded-full" />
-          </div>
-
-          <motion.div
-            className="space-y-8"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-          >
-            {education.map((edu, index) => (
-              <motion.div key={index} variants={itemVariants} className="relative pl-6 sm:pl-8 group">
-                <div className="absolute top-2 bottom-0 left-[3px] w-[2px] bg-border group-last:bg-transparent" />
-                <div className="absolute top-2 left-0 w-2 h-2 rounded-full bg-primary ring-4 ring-background" />
-                
-                <h3 className="font-semibold text-base text-foreground mb-1">{edu.degree}</h3>
-                <p className="text-primary text-sm font-medium mb-2">{edu.institution}</p>
-                <div className="text-sm font-medium text-secondary-foreground mb-3">{edu.period}</div>
-                <p className="text-sm text-secondary-foreground">{edu.detail}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-
       </div>
     </section>
   )
