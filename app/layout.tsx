@@ -1,46 +1,60 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Geist, Geist_Mono, Space_Grotesk } from "next/font/google"
+import { Geist_Mono, Space_Grotesk, Anton } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { ThemeProvider } from "@/components/theme-provider"
 import "./globals.css"
 import Script from "next/script"
 
-const geist = Geist({ subsets: ["latin"], variable: "--font-geist" })
 const geistMono = Geist_Mono({ subsets: ["latin"], variable: "--font-geist-mono" })
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"], variable: "--font-space-grotesk" })
+const anton = Anton({ subsets: ["latin"], weight: "400", variable: "--font-anton" })
 
 export const metadata: Metadata = {
-  title: "Mohammad Kazim | Software Engineer | Portfolio",
+  metadataBase: new URL("https://my-portfolio-peach-delta-18.vercel.app"),
+  title: {
+    default: "Mohammad Kazim | Software Engineer & AI Solutions",
+    template: "%s | Mohammad Kazim",
+  },
   description:
-    "Software Engineer with 1+ year of experience building production applications, backend services, automation workflows, and database-driven systems with Python, JavaScript, SQL, REST APIs, Linux, Docker, and AWS.",
+    "Mohammad Kazim — Software Engineer & AI Solutions in India with 1.5+ years building production-grade AI applications, agentic automation workflows, and backend platforms with Python, FastAPI, GraphQL, React, and LLM technologies.",
+  authors: [{ name: "Mohammad Kazim" }],
+  creator: "Mohammad Kazim",
   keywords: [
     "Software Engineer",
+    "AI Solutions",
+    "AI Security",
     "Backend Developer",
-    "Python Developer",
-    "JavaScript",
-    "REST APIs",
-    "PostgreSQL",
-    "MySQL",
-    "AWS",
+    "LLM Applications",
+    "Agentic Automation",
+    "Prompt Engineering",
+    "Python",
+    "FastAPI",
+    "GraphQL",
+    "React",
+    "n8n",
     "Docker",
+    "AWS",
+    "Linux",
+    "Networks",
     "Mohammad Kazim",
     "Mohammad Kazim portfolio",
     "Mohammad Kazim software engineer",
   ],
   openGraph: {
-    title: "Mohammad Kazim | Software Engineer",
+    title: "Mohammad Kazim | Software Engineer & AI Solutions",
     description:
-      "Software Engineer with 1+ year of experience building backend services, APIs, and database-driven systems.",
+      "Software Engineer & AI Solutions in India — building production-grade AI applications, agentic automation, and backend platforms.",
     type: "website",
     locale: "en_US",
     url: "https://my-portfolio-peach-delta-18.vercel.app",
+    siteName: "Mohammad Kazim",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Mohammad Kazim | Software Engineer",
+    title: "Mohammad Kazim | Software Engineer & AI Solutions",
     description:
-      "Software Engineer with 1+ year of experience building backend services, APIs, and database-driven systems.",
+      "Software Engineer & AI Solutions — production-grade AI applications, agentic automation, and backend platforms.",
   },
   alternates: {
     canonical: "https://my-portfolio-peach-delta-18.vercel.app",
@@ -75,7 +89,7 @@ export default function RootLayout({
               "@type": "Person",
               name: "Mohammad Kazim",
               url: "https://my-portfolio-peach-delta-18.vercel.app",
-              jobTitle: "Software Engineer",
+              jobTitle: "Software Engineer & AI Solutions",
               email: "mohammadkazim71@gmail.com",
               telephone: "+917898184847",
               address: {
@@ -84,21 +98,27 @@ export default function RootLayout({
               },
               sameAs: ["https://linkedin.com/in/mohammadkazim71", "https://github.com/Kazim71"],
               knowsAbout: [
+                "AI Engineering",
+                "AI Security",
+                "LLM Applications",
+                "Prompt Engineering",
+                "Agentic Automation",
                 "Python",
-                "JavaScript",
-                "SQL",
-                "REST APIs",
+                "FastAPI",
+                "GraphQL",
+                "React",
+                "n8n",
                 "PostgreSQL",
-                "MySQL",
-                "AWS",
                 "Docker",
+                "AWS",
                 "Linux",
+                "Networking",
               ],
             }),
           }}
         />
       </head>
-      <body className={`${geist.variable} ${geistMono.variable} ${spaceGrotesk.variable} font-sans antialiased`}>
+      <body className={`${anton.variable} ${geistMono.variable} ${spaceGrotesk.variable} font-sans antialiased`}>
         <ThemeProvider
           attribute="class"
           defaultTheme="light"

@@ -25,6 +25,18 @@ const certifications = [
     year: "2025",
   },
   {
+    title: "Full-Stack AI with Python: LLMs, RAG, Agents & LangGraph",
+    issuer: "Udemy",
+    desc: "32-hour hands-on program covering LLM application development, retrieval-augmented generation, and agentic workflows with LangGraph.",
+    year: "2025",
+  },
+  {
+    title: "Basic Certificate Course in Artificial Intelligence",
+    issuer: "FutureSkills PRIME — MeitY & NASSCOM (C-DAC / NIELIT)",
+    desc: "Bridge course training program in foundational AI concepts, completed under the Government of India's FutureSkills PRIME initiative.",
+    year: "2023",
+  },
+  {
     title: "B.Tech — Electronics & Communication",
     issuer: "Bharati Vidyapeeth Deemed University",
     desc: "Bachelor of Technology with 8.45/10 CGPA, strong foundation in engineering and systems thinking.",
@@ -52,7 +64,7 @@ export default function Certifications() {
           <WavySvg />
         </motion.div>
 
-        <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-14 flex flex-wrap justify-center gap-6">
           {certifications.map((cert, idx) => (
             <motion.div
               key={idx}
@@ -60,6 +72,7 @@ export default function Certifications() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: idx * 0.08 }}
+              className="w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.333%-1rem)]"
             >
               <div className="flex h-full flex-col rounded-3xl border-2 border-foreground bg-card p-6 transition-transform hover:-translate-y-1.5 hover:shadow-brutal">
                 <div className="flex h-12 w-12 items-center justify-center rounded-2xl border-2 border-foreground bg-sun">

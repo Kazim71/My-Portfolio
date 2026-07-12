@@ -25,14 +25,14 @@ const contacts = [
 ]
 
 const interests = [
-  "AI Engineering",
+  "AI Solutions",
+  "AI Security",
   "Backend Systems",
   "LLM Applications",
   "Agentic Automation",
-  "Enterprise AI",
-  "Open Source",
+  "Linux & Networks",
   "Full-time Roles",
-  "Freelance Opportunities",
+  "Freelance Projects",
 ]
 
 export default function Contact() {
@@ -88,7 +88,7 @@ export default function Contact() {
                     <span className="mt-5 text-xs font-bold uppercase tracking-widest text-muted-foreground">
                       {c.label}
                     </span>
-                    <span className="mt-1 break-words font-semibold text-foreground">{c.value}</span>
+                    <span className="mt-1 whitespace-nowrap font-semibold text-foreground">{c.value}</span>
                   </div>
                 </a>
               </motion.div>

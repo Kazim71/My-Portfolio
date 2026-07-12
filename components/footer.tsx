@@ -1,6 +1,7 @@
 "use client"
 
 import { Linkedin } from "lucide-react"
+import ConvaiWidget from "@/components/convai-widget"
 
 function StarIcon({ className }: { className?: string }) {
   return (
@@ -34,11 +35,12 @@ export default function Footer() {
           <a href="#projects" className="text-background/80 hover:text-background">Projects</a>
           <a href="#experience" className="text-background/80 hover:text-background">Experience</a>
           <a href="#about" className="text-background/80 hover:text-background">About</a>
-          <a href="#events-preview" className="text-background/80 hover:text-background">Events</a>
           <a href="#skills" className="text-background/80 hover:text-background">Stack</a>
           <a href="#blog" className="text-background/80 hover:text-background">Blog</a>
           <a href="#contact" className="text-background/80 hover:text-background">Contact</a>
         </nav>
+
+        <ConvaiWidget />
 
         <a
           href="https://linkedin.com/in/mohammadkazim71"

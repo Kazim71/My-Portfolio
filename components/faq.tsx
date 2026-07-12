@@ -1,6 +1,8 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
+import { ChevronDown } from "lucide-react"
 
 function WavySvg() {
   return (
@@ -13,23 +15,33 @@ function WavySvg() {
 const faqs = [
   {
     q: "Who is Mohammad Kazim?",
-    a: "Mohammad Kazim is a Software Engineer & AI Builder based in India, who builds production AI applications, backend platforms, and agentic automation workflows for enterprise clients using Python, FastAPI, React, and LLM technologies.",
+    a: "Mohammad Kazim is a Software Engineer & AI Solutions specialist based in India with 1.5+ years of professional experience. He builds production-grade AI applications, scalable backend platforms, and agentic automation workflows for enterprise clients — working across the full stack from LLM integration to cloud infrastructure.",
   },
   {
-    q: "What does a Software Engineer & AI Builder do?",
-    a: "A Software Engineer & AI Builder designs, builds and deploys AI-powered applications and backend platforms — from LLM integration and prompt engineering to agentic automation workflows, GraphQL APIs, and cloud-native infrastructure that runs business operations at scale.",
+    q: "What kind of AI solutions does Kazim build?",
+    a: "Kazim designs and deploys end-to-end AI-powered systems — including LLM-based chatbots, RAG pipelines, agentic workflows with tool-calling, AI security layers with prompt injection detection, and multi-step automation using n8n. Every solution is built for production with observability, error handling, and scalability in mind.",
   },
   {
-    q: "What technologies does Kazim work with?",
-    a: "Kazim works with Python, FastAPI, GraphQL, React, Next.js, TypeScript, OpenAI, Claude, Gemini, n8n, Docker, PostgreSQL, Redis, RabbitMQ, and cloud infrastructure to ship production-ready AI and backend systems.",
+    q: "What technologies and tools does Kazim work with?",
+    a: "Core stack: Python, FastAPI, GraphQL, React, Next.js, TypeScript. AI/ML: OpenAI, Claude, Gemini, RAG, LangChain. Automation: n8n, agentic workflows, webhooks. Infra: Docker, AWS, PostgreSQL, Redis, RabbitMQ, Linux, CI/CD, Prometheus, Grafana. Security: AI safety, prompt injection detection, NIST/SOC 2 compliance.",
   },
   {
-    q: "Is Kazim available for hire?",
-    a: "Yes. Kazim is available for full-time software engineering and AI roles, both in India and remotely. You can reach him via email, LinkedIn, or GitHub.",
+    q: "What results has Kazim delivered in production?",
+    a: "Key outcomes include: 500+ daily transactions on a cloud-native platform, 40% reduction in manual effort through AI automation, 99.9% uptime on production infrastructure, and enterprise AI agents handling real customer interactions with built-in safety guardrails.",
+  },
+  {
+    q: "Is Kazim available for hire or freelance work?",
+    a: "Yes. Kazim is open to full-time software engineering and AI roles (both in India and remote), as well as freelance projects involving AI integration, backend development, or automation. You can reach him via email, LinkedIn, or WhatsApp.",
+  },
+  {
+    q: "How does Kazim approach AI security?",
+    a: "Every AI system Kazim builds includes security by design — prompt injection detection, input sanitization, output validation, hallucination mitigation, and compliance with frameworks like NIST and SOC 2. AI safety isn't an afterthought; it's baked into the architecture from day one.",
   },
 ]
 
 export default function FAQ() {
+  const [openIdx, setOpenIdx] = useState<number | null>(null)
+
   return (
     <section id="faq" className="px-5 py-20 md:px-10 md:py-28">
       <div className="mx-auto max-w-3xl">
@@ -50,24 +62,53 @@ export default function FAQ() {
         </motion.div>
 
         <dl className="mt-14 space-y-4">
-          {faqs.map((faq, idx) => (
-            <motion.div
-              key={idx}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-50px" }}
-              transition={{ duration: 0.5, delay: idx * 0.08 }}
-            >
-              <div className="rounded-3xl border-2 border-foreground bg-card p-6 md:p-7">
-                <dt className="font-display text-xl leading-tight tracking-tight text-foreground md:text-2xl">
-                  {faq.q}
-                </dt>
-                <dd className="mt-3 text-sm text-muted-foreground md:text-base">
-                  {faq.a}
-                </dd>
-              </div>
-            </motion.div>
-          ))}
+          {faqs.map((faq, idx) => {
+            const isOpen = openIdx === idx
+            return (
+              <motion.div
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.5, delay: idx * 0.06 }}
+              >
+                <div className="rounded-3xl border-2 border-foreground bg-card transition-shadow hover:shadow-brutal-sm">
+                  <button
+                    type="button"
+                    onClick={() => setOpenIdx(isOpen ? null : idx)}
+                    aria-expanded={isOpen}
+                    className="flex w-full items-center justify-between gap-4 p-6 text-left md:p-7"
+                  >
+                    <dt className="font-display text-xl leading-tight tracking-tight text-foreground md:text-2xl">
+                      {faq.q}
+                    </dt>
+                    <motion.span
+                      animate={{ rotate: isOpen ? 180 : 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="shrink-0"
+                    >
+                      <ChevronDown className="h-5 w-5 text-foreground" aria-hidden="true" />
+                    </motion.span>
+                  </button>
+                  <AnimatePresence initial={false}>
+                    {isOpen && (
+                      <motion.dd
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                        className="overflow-hidden"
+                      >
+                        <div className="px-6 pb-6 text-sm text-muted-foreground md:px-7 md:pb-7 md:text-base">
+                          {faq.a}
+                        </div>
+                      </motion.dd>
+                    )}
+                  </AnimatePresence>
+                </div>
+              </motion.div>
+            )
+          })}
         </dl>
       </div>
     </section>

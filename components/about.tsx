@@ -22,14 +22,14 @@ const services = [
     desc: "Building production AI assistants, prompt engineering frameworks, and RAG-powered applications with safety guardrails.",
   },
   {
+    emoji: "🛡️",
+    title: "AI Security",
+    desc: "Prompt injection detection, input sanitization, output validation, hallucination mitigation, and NIST/SOC 2 compliance for AI systems.",
+  },
+  {
     emoji: "⚡",
     title: "Workflow Automation",
     desc: "End-to-end agentic automation using n8n, webhooks, and LLM tool-calling to automate multi-step business processes.",
-  },
-  {
-    emoji: "🧠",
-    title: "AI Agents",
-    desc: "Designing enterprise AI agent architectures with prompt injection detection, escalation logic, and hallucination mitigation.",
   },
   {
     emoji: "🐍",
@@ -37,14 +37,14 @@ const services = [
     desc: "Scalable Python & Node.js backends with FastAPI, GraphQL, REST APIs, and event-driven architectures.",
   },
   {
+    emoji: "🌐",
+    title: "Networking & Linux",
+    desc: "Linux server administration, TCP/IP networking, DNS, Nginx, firewall configuration, SSL/TLS, and network debugging.",
+  },
+  {
     emoji: "☁️",
     title: "Cloud & DevOps",
     desc: "Containerized infrastructure with Docker, CI/CD pipelines, observability using Prometheus, Grafana & OpenTelemetry.",
-  },
-  {
-    emoji: "🔄",
-    title: "Production Deployments",
-    desc: "Shipping reliable AI-powered systems to real enterprise clients with 99.9% uptime, not demos.",
   },
 ]
 
@@ -78,7 +78,7 @@ export default function About() {
           <p>
             I&apos;m <strong className="text-foreground">Mohammad Kazim</strong>, a{" "}
             <strong className="text-foreground">Software Engineer</strong> and{" "}
-            <strong className="text-foreground">AI Builder</strong> based in{" "}
+            <strong className="text-foreground">AI Solutions Engineer</strong> based in{" "}
             <strong className="text-foreground">India</strong>, building production-grade AI applications,
             backend platforms, and agentic automation workflows.
           </p>

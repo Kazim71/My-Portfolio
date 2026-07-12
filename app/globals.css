@@ -59,9 +59,8 @@
 }
 
 @theme inline {
-  --font-sans: "Geist", "Inter", sans-serif;
-  --font-mono: "Geist Mono", monospace;
-  --font-display: "Space Grotesk", "Geist", sans-serif;
+  --font-sans: var(--font-space-grotesk), "Inter", sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -110,12 +109,30 @@
     box-shadow: 3px 3px 0 0 var(--border);
   }
   .font-display {
-    font-family: var(--font-display);
+    font-family: var(--font-anton), var(--font-space-grotesk), sans-serif;
+    font-weight: 400;
+    letter-spacing: 0.01em;
   }
 }
 
 html {
   scroll-behavior: smooth;
+  /* Offset anchor targets so they aren't hidden under the fixed header */
+  scroll-padding-top: 6rem;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Accessible, on-brand focus ring */
+:where(a, button, [role="button"], input, textarea, select):focus-visible {
+  outline: 2px solid var(--foreground);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+::selection {
+  background: var(--mint);
+  color: var(--foreground);
 }
 
 @keyframes marquee {
@@ -129,4 +146,40 @@ html {
 
 .animate-marquee {
   animation: marquee 25s linear infinite;
+}
+
+@keyframes float-slow {
+  0%,
+  100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-14px) rotate(3deg);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 6s ease-in-out infinite;
+}
+
+@keyframes word-in {
+  0% {
+    opacity: 0;
+    transform: translateY(0.5em) rotate(2deg);
+    filter: blur(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg);
+    filter: blur(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-slow {
+    animation: none;
+  }
+  html {
+    scroll-behavior: auto;
+  }
 }

@@ -15,7 +15,7 @@ export default function SeoBanner() {
   ]
 
   return (
-    <section aria-label="Software Engineer & AI Builder in India" className="border-t-2 border-foreground bg-sun px-5 py-16 md:px-10 md:py-20">
+    <section aria-label="Software Engineer & AI Solutions in India" className="border-t-2 border-foreground bg-sun px-5 py-16 md:px-10 md:py-20">
       <div className="mx-auto max-w-5xl text-center">
         <motion.div
           initial={{ opacity: 0, y: 15 }}
@@ -24,7 +24,7 @@ export default function SeoBanner() {
           transition={{ duration: 0.5 }}
         >
           <h2 className="font-display text-3xl leading-tight tracking-tight text-foreground md:text-5xl">
-            Software Engineer &amp; AI Builder in India
+            Software Engineer &amp; AI Solutions in India
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-base text-foreground/80 md:text-lg">
             I&apos;m Mohammad Kazim — I build production AI applications, backend platforms, and agentic

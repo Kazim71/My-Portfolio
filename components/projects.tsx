@@ -79,7 +79,7 @@ export default function Projects() {
           <WavySvg />
         </motion.div>
 
-        <div className="mt-14 grid gap-6 md:grid-cols-2">
+        <div className="mt-14 flex flex-wrap justify-center gap-6">
           {projects.map((project, idx) => (
             <motion.div
               key={idx}
@@ -87,6 +87,7 @@ export default function Projects() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-50px" }}
               transition={{ duration: 0.5, delay: idx * 0.1 }}
+              className="w-full md:w-[calc(50%-0.75rem)]"
             >
               <div className="group flex h-full flex-col rounded-3xl border-2 border-foreground bg-card p-7 transition-transform hover:-translate-y-1.5 hover:shadow-brutal-lg md:p-9">
                 <div className="flex items-start justify-between">

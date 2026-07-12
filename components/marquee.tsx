@@ -1,10 +1,12 @@
 const keywords = [
-  "AI Applications",
+  "AI Solutions",
   "LLM Development",
+  "AI Security",
   "n8n Workflows",
   "FastAPI",
   "Agentic AI",
   "Python",
+  "Linux & Networks",
   "React",
   "GraphQL",
   "Docker",
