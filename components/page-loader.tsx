@@ -90,7 +90,7 @@ export default function PageLoader() {
               transition={{ delay: 0.5, duration: 0.5 }}
               className="mt-3 text-xs font-semibold uppercase tracking-[0.35em] text-background"
             >
-              Software Engineer &middot; AI Solutions
+              Full-Stack Engineer &middot; AI Integration
             </motion.p>
 
             {/* Progress bar + counter, bottom-anchored */}

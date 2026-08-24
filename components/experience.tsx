@@ -13,26 +13,26 @@ function WavySvg() {
 
 const experiences = [
   {
-    role: "Software Engineer — AI Systems & Automation",
+    role: "Software Engineer — Full-Stack & AI Integration",
     company: "EZ Rankings",
     period: "March 2026 – Present",
     location: "Noida, India",
     highlights: [
-      "Designed and implemented AI-enabled backend services and APIs supporting customer-facing applications across 15+ business workflows",
-      "Built agentic automation workflows using n8n, integrating LLM nodes, webhooks, and third-party APIs",
-      "Collaborated with stakeholders to translate operational challenges into scalable AI-driven workflow solutions, reducing manual effort by 40%",
-      "Enabled self-service dashboards used by 50+ stakeholders",
+      "Maintained and debugged a production PHP website built on Laravel 11 — fixed bugs, shipped feature updates, and resolved deployment issues on an existing codebase",
+      "Designed prompt engineering workflows integrating OpenAI's API into internal tools via n8n, wiring LLM calls, webhooks, and third-party APIs into multi-step automations covering 15+ business processes",
+      "Automated multi-step operational workflows end to end, cutting manual effort by 40% and enabling self-service dashboards used daily by 50+ people",
+      "Translated operational challenges into scalable, AI-driven workflow solutions in collaboration with stakeholders",
     ],
   },
   {
-    role: "Software Engineer — Backend & Infrastructure",
+    role: "Associate Software Engineer",
     company: "Clay Brains",
     period: "February 2025 – February 2026",
     location: "Delhi, India",
     highlights: [
-      "Designed production backend services and data pipelines on AWS EC2 with 99.9% uptime",
-      "Improved system query performance by 60% through database optimization",
-      "Built secure authentication and authorization systems (JWT, RBAC)",
+      "Developed backend modules and REST APIs in JavaScript and Python; debugged and optimized SQL/database queries, cutting query time by 60% on the production database",
+      "Built JWT/RBAC authentication modules and real-time WebSocket services; deployed via GitHub Actions CI/CD, maintaining 99.9% uptime across 5+ environments",
+      "Designed production backend services and data pipelines on AWS EC2",
       "Developed real-time monitoring solutions, reducing issue-detection time by 30%",
     ],
   },

@@ -26,7 +26,7 @@ const domains = [
   },
   {
     title: "Backend",
-    skills: ["Python", "FastAPI", "Node.js", "Express.js", "REST APIs", "GraphQL APIs", "JWT", "OAuth2", "WebSockets"],
+    skills: ["Python", "FastAPI", "Node.js", "Express.js", "PHP (OOP)", "Laravel", "WordPress / ACF", "REST APIs", "GraphQL APIs", "JWT", "OAuth2", "WebSockets"],
   },
   {
     title: "Networking & Linux",
@@ -34,7 +34,7 @@ const domains = [
   },
   {
     title: "Databases",
-    skills: ["PostgreSQL", "MySQL", "Redis", "MongoDB"],
+    skills: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Supabase"],
   },
   {
     title: "Frontend",
@@ -47,6 +47,10 @@ const domains = [
 ]
 
 const specializations = [
+  "Full-Stack Development",
+  "React & TypeScript",
+  "PHP & Laravel",
+  "WordPress Development",
   "AI-Powered Applications",
   "Agentic Automation",
   "LLM Integration",

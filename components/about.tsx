@@ -33,8 +33,8 @@ const services = [
   },
   {
     emoji: "🐍",
-    title: "Backend Development",
-    desc: "Scalable Python & Node.js backends with FastAPI, GraphQL, REST APIs, and event-driven architectures.",
+    title: "Full-Stack Development",
+    desc: "React/TypeScript interfaces backed by Laravel & PHP (OOP), Node.js/FastAPI services, and WordPress/ACF builds — end to end.",
   },
   {
     emoji: "🌐",
@@ -63,7 +63,7 @@ export default function About() {
             About Me
           </span>
           <h2 className="mt-4 font-display text-4xl leading-[0.95] tracking-tight text-foreground md:text-6xl">
-            AI-Powered Solutions For Your Business
+            Full-Stack Products, AI-Integrated
           </h2>
           <WavySvg />
         </motion.div>
@@ -77,16 +77,18 @@ export default function About() {
         >
           <p>
             I&apos;m <strong className="text-foreground">Mohammad Kazim</strong>, a{" "}
-            <strong className="text-foreground">Software Engineer</strong> and{" "}
-            <strong className="text-foreground">AI Solutions Engineer</strong> based in{" "}
-            <strong className="text-foreground">India</strong>, building production-grade AI applications,
-            backend platforms, and agentic automation workflows.
+            <strong className="text-foreground">Full-Stack Engineer</strong> based in{" "}
+            <strong className="text-foreground">India</strong>, building{" "}
+            <strong className="text-foreground">React/TypeScript</strong> interfaces and{" "}
+            <strong className="text-foreground">PHP/Laravel</strong> backends, with production experience
+            integrating LLM APIs via prompt engineering.
           </p>
           <p>
-            I design, develop and deploy end-to-end AI solutions — from LLM integration and
-            prompt engineering to scalable backend infrastructure — that deliver measurable results,
-            such as supporting <strong className="text-foreground">500+ daily transactions</strong> and
-            reducing manual effort by <strong className="text-foreground">40%</strong>.
+            I&apos;ve shipped a React/TypeScript operator dashboard, a RAG-grounded AI assistant, and a
+            production multi-tenant SaaS platform — delivering measurable results such as supporting{" "}
+            <strong className="text-foreground">500+ daily transactions</strong>, cutting load times by{" "}
+            <strong className="text-foreground">11.7×</strong>, and reducing manual effort by{" "}
+            <strong className="text-foreground">40%</strong>.
           </p>
         </motion.div>
 

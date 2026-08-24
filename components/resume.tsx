@@ -14,8 +14,8 @@ function WavySvg() {
 }
 
 const highlights = [
-  { icon: Briefcase, label: "Experience", value: "1.5+ years building AI & backend systems" },
-  { icon: Wrench, label: "Focus", value: "AI Solutions, AI Security, cloud-native backends" },
+  { icon: Briefcase, label: "Experience", value: "1.5+ years building React/TypeScript & Laravel/PHP production systems" },
+  { icon: Wrench, label: "Focus", value: "Full-stack development, LLM integration, production SaaS platforms" },
   { icon: GraduationCap, label: "Education", value: "B.Tech ECE — 8.45 CGPA" },
 ]
 
@@ -54,7 +54,7 @@ export default function Resume() {
               </span>
               <div className="text-left">
                 <p className="font-display text-2xl tracking-tight text-foreground">Mohammad Kazim</p>
-                <p className="text-sm font-semibold text-muted-foreground">Software Engineer &amp; AI Solutions</p>
+                <p className="text-sm font-semibold text-muted-foreground">Full-Stack Engineer &amp; AI Integration</p>
               </div>
             </div>
 

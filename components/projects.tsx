@@ -14,6 +14,15 @@ function WavySvg() {
 const projects = [
   {
     num: "01",
+    category: "Full-Stack SaaS",
+    title: "LeadPulse — Multi-Tenant Lead Capture & Identity Resolution",
+    desc: "Production platform for e-commerce storefronts, verified end-to-end against live data: diagnosed a CSP misconfiguration that silently disabled all client-side interactivity for three weeks, eliminated a recurring PostgREST 1,000-row truncation bug across three endpoints, resolved Postgres RLS query-planning timeouts invisible to service-role testing, and migrated the backend off a failing free-tier host onto a self-managed Oracle Cloud VM with a zero-downtime HTTPS cutover.",
+    stack: ["Next.js", "Node.js", "Express", "PostgreSQL", "Supabase", "Oracle Cloud", "nginx", "GitHub Actions"],
+    impact: "11.7× faster loads (6.1s → 525ms), 23 verified migrations",
+    href: "https://github.com/Kazim71",
+  },
+  {
+    num: "02",
     category: "Enterprise AI",
     title: "AirLynk — Cloud-Native AI-Ready Platform",
     desc: "Cloud-native transportation platform supporting real-time booking, authentication, pricing, notifications, and operational dashboards for 300+ service locations with 500+ daily transactions.",
@@ -22,7 +31,7 @@ const projects = [
     href: "https://airportlimolink.ca",
   },
   {
-    num: "02",
+    num: "03",
     category: "AI Agent",
     title: "GrowScience — Enterprise AI Agent",
     desc: "Enterprise AI agent architecture using prompt engineering, RAG, and AI safety guardrails across 15+ prompt frameworks integrating 200+ documents for domain-specific recommendations.",
@@ -31,7 +40,7 @@ const projects = [
     href: "https://chatbot.senadvertising.com/",
   },
   {
-    num: "03",
+    num: "04",
     category: "AI SaaS",
     title: "StructuraUI — AI-Powered UI Generation",
     desc: "AI SaaS platform using Google Gemini to generate editable UI layouts from natural language prompts, supporting 20+ component types and reducing design-to-code time by 70%.",
@@ -40,7 +49,7 @@ const projects = [
     href: "https://github.com/Kazim71/StructuraUI",
   },
   {
-    num: "04",
+    num: "05",
     category: "Security & Compliance",
     title: "Compliance Automation & Asset Monitoring",
     desc: "Compliance monitoring platform integrating multi-source asset discovery pipelines with policy-as-code validation frameworks, continuous configuration compliance checks, and posture reports aligned to NIST and SOC 2 control requirements.",
@@ -49,7 +58,7 @@ const projects = [
     href: "https://github.com/Kazim71",
   },
   {
-    num: "05",
+    num: "06",
     category: "Data Engineering",
     title: "ETL Pipeline & Observability System",
     desc: "ETL pipelines aggregating multi-source operational data into PostgreSQL with Grafana dashboards providing real-time visibility into system health, data quality posture, and compliance metrics across 10,000+ catalog items.",

@@ -1,5 +1,8 @@
 const keywords = [
-  "AI Solutions",
+  "Full-Stack Development",
+  "React & TypeScript",
+  "PHP & Laravel",
+  "AI Integration",
   "LLM Development",
   "AI Security",
   "n8n Workflows",
@@ -7,7 +10,6 @@ const keywords = [
   "Agentic AI",
   "Python",
   "Linux & Networks",
-  "React",
   "GraphQL",
   "Docker",
   "Production AI",

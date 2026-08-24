@@ -15,7 +15,7 @@ function WavySvg() {
 const faqs = [
   {
     q: "Who is Mohammad Kazim?",
-    a: "Mohammad Kazim is a Software Engineer & AI Solutions specialist based in India with 1.5+ years of professional experience. He builds production-grade AI applications, scalable backend platforms, and agentic automation workflows for enterprise clients — working across the full stack from LLM integration to cloud infrastructure.",
+    a: "Mohammad Kazim is a Full-Stack Engineer based in India with 1.5+ years of professional experience building React/TypeScript interfaces and PHP/Laravel backends, with production experience integrating LLM APIs via prompt engineering. He's shipped a React/TypeScript operator dashboard, a RAG-grounded AI assistant, and a production multi-tenant SaaS platform — working across the full stack from frontend to cloud infrastructure.",
   },
   {
     q: "What kind of AI solutions does Kazim build?",
@@ -23,11 +23,11 @@ const faqs = [
   },
   {
     q: "What technologies and tools does Kazim work with?",
-    a: "Core stack: Python, FastAPI, GraphQL, React, Next.js, TypeScript. AI/ML: OpenAI, Claude, Gemini, RAG, LangChain. Automation: n8n, agentic workflows, webhooks. Infra: Docker, AWS, PostgreSQL, Redis, RabbitMQ, Linux, CI/CD, Prometheus, Grafana. Security: AI safety, prompt injection detection, NIST/SOC 2 compliance.",
+    a: "Core stack: React, Next.js, TypeScript, PHP (Laravel, WordPress/ACF), Node.js, Express, Python, FastAPI, GraphQL. AI/ML: OpenAI, Gemini, Claude, RAG, prompt engineering. Automation: n8n, agentic workflows, webhooks. Infra: PostgreSQL, Supabase, MySQL, MongoDB, Docker, AWS, Oracle Cloud, Linux, CI/CD. Security: AI safety, prompt injection detection, NIST/SOC 2 compliance.",
   },
   {
     q: "What results has Kazim delivered in production?",
-    a: "Key outcomes include: 500+ daily transactions on a cloud-native platform, 40% reduction in manual effort through AI automation, 99.9% uptime on production infrastructure, and enterprise AI agents handling real customer interactions with built-in safety guardrails.",
+    a: "Key outcomes include: an 11.7× load-time reduction (6.1s → 525ms) on a production SaaS platform, 500+ daily transactions on a cloud-native platform, 40% reduction in manual effort through AI automation, 99.9% uptime on production infrastructure, and enterprise AI agents handling real customer interactions with built-in safety guardrails.",
   },
   {
     q: "Is Kazim available for hire or freelance work?",

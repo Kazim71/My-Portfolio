@@ -7,8 +7,8 @@ const EASE = [0.22, 1, 0.36, 1] as const
 
 const rotatingWords = [
   { text: "ENGINEER", bg: "bg-pink" },
-  { text: "AI SOLUTIONS", bg: "bg-mint" },
-  { text: "BACKEND", bg: "bg-sun" },
+  { text: "FULL-STACK", bg: "bg-mint" },
+  { text: "AI INTEGRATION", bg: "bg-sun" },
 ]
 
 export default function Hero() {
@@ -45,11 +45,11 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 1.25, ease: EASE }}
           className="inline-block rounded-full bg-mint px-6 py-2 text-sm font-bold text-foreground"
         >
-          Software Engineer &nbsp;&bull;&nbsp; AI Solutions &nbsp;&bull;&nbsp; Backend Developer
+          Full-Stack Engineer &nbsp;&bull;&nbsp; React/TypeScript, Laravel &amp; AI Integration
         </motion.span>
 
         <h1 className="mt-6 font-display text-[2.9rem] leading-[1.02] tracking-tight text-foreground sm:text-7xl md:text-8xl lg:text-[7.5rem]">
-          <span className="sr-only">Mohammad Kazim — Software Engineer, AI Solutions & Backend Developer in India. </span>
+          <span className="sr-only">Mohammad Kazim — Full-Stack Engineer, React/TypeScript, Laravel &amp; AI Integration in India. </span>
           <motion.span
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
@@ -87,8 +87,9 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 1.6, ease: EASE }}
           className="mx-auto mt-8 max-w-2xl text-base text-muted-foreground md:text-lg"
         >
-          Software Engineer &amp; AI Solutions specialist in India, building production-grade AI applications,
-          secure backend platforms, and agentic automation workflows with Python, FastAPI, React, and LLM technologies.
+          Full-Stack Engineer in India building React/TypeScript interfaces and PHP/Laravel backends, with
+          production experience integrating LLM APIs (OpenAI, Gemini) via prompt engineering — shipped a
+          React/TypeScript operator dashboard, a RAG-grounded AI assistant, and a production multi-tenant SaaS platform.
         </motion.p>
 
         <motion.div

@@ -25,7 +25,9 @@ const contacts = [
 ]
 
 const interests = [
-  "AI Solutions",
+  "Full-Stack Development",
+  "PHP & Laravel",
+  "AI Integration",
   "AI Security",
   "Backend Systems",
   "LLM Applications",
