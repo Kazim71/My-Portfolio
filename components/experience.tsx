@@ -18,7 +18,7 @@ const experiences = [
     period: "March 2026 – Present",
     location: "Noida, India",
     highlights: [
-      "Maintained and debugged a production PHP website built on Laravel 11 — fixed bugs, shipped feature updates, and resolved deployment issues on an existing codebase",
+      "Developed and maintained Node.js/Python REST APIs integrating CRM, analytics, and third-party platforms across 15+ business workflows; debugged production issues end to end and deployed fixes directly",
       "Designed prompt engineering workflows integrating OpenAI's API into internal tools via n8n, wiring LLM calls, webhooks, and third-party APIs into multi-step automations covering 15+ business processes",
       "Automated multi-step operational workflows end to end, cutting manual effort by 40% and enabling self-service dashboards used daily by 50+ people",
       "Translated operational challenges into scalable, AI-driven workflow solutions in collaboration with stakeholders",

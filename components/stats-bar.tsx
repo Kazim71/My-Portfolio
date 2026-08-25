@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react"
 import { motion, useInView } from "framer-motion"
 
 const stats = [
-  { value: 1.5, suffix: "+", decimal: 1, label: "Years of Professional Experience" },
+  { value: 1.7, suffix: "+", decimal: 1, label: "Years of Professional Experience" },
   { value: 15, suffix: "+", decimal: 0, label: "Production Business Workflows" },
   { value: 500, suffix: "+", decimal: 0, label: "Daily Transactions Supported" },
   { value: 8.45, suffix: "", decimal: 2, label: "CGPA — Academic Excellence" },

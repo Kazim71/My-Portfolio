@@ -45,11 +45,11 @@ export default function Hero() {
           transition={{ duration: 0.5, delay: 1.25, ease: EASE }}
           className="inline-block rounded-full bg-mint px-6 py-2 text-sm font-bold text-foreground"
         >
-          Full-Stack Engineer &nbsp;&bull;&nbsp; React/TypeScript, Laravel &amp; AI Integration
+          Full-Stack Engineer &nbsp;&bull;&nbsp; React/TypeScript, Node.js/Python &amp; AI Integration
         </motion.span>
 
         <h1 className="mt-6 font-display text-[2.9rem] leading-[1.02] tracking-tight text-foreground sm:text-7xl md:text-8xl lg:text-[7.5rem]">
-          <span className="sr-only">Mohammad Kazim — Full-Stack Engineer, React/TypeScript, Laravel &amp; AI Integration in India. </span>
+          <span className="sr-only">Mohammad Kazim — Full-Stack Engineer, React/TypeScript, Node.js/Python &amp; AI Integration in India. </span>
           <motion.span
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
@@ -87,7 +87,7 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 1.6, ease: EASE }}
           className="mx-auto mt-8 max-w-2xl text-base text-muted-foreground md:text-lg"
         >
-          Full-Stack Engineer in India building React/TypeScript interfaces and PHP/Laravel backends, with
+          Full-Stack Engineer in India building React/TypeScript interfaces and Node.js/Python backends, with
           production experience integrating LLM APIs (OpenAI, Gemini) via prompt engineering — shipped a
           React/TypeScript operator dashboard, a RAG-grounded AI assistant, and a production multi-tenant SaaS platform.
         </motion.p>

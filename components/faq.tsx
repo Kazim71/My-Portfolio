@@ -15,7 +15,7 @@ function WavySvg() {
 const faqs = [
   {
     q: "Who is Mohammad Kazim?",
-    a: "Mohammad Kazim is a Full-Stack Engineer based in India with 1.5+ years of professional experience building React/TypeScript interfaces and PHP/Laravel backends, with production experience integrating LLM APIs via prompt engineering. He's shipped a React/TypeScript operator dashboard, a RAG-grounded AI assistant, and a production multi-tenant SaaS platform — working across the full stack from frontend to cloud infrastructure.",
+    a: "Mohammad Kazim is a Full-Stack Engineer based in India with 1.7+ years of professional experience building React/TypeScript interfaces and Node.js/Python backends, with production experience integrating LLM APIs via prompt engineering. He's shipped a React/TypeScript operator dashboard, a RAG-grounded AI assistant, and a production multi-tenant SaaS platform — working across the full stack from frontend to cloud infrastructure.",
   },
   {
     q: "What kind of AI solutions does Kazim build?",
@@ -23,7 +23,7 @@ const faqs = [
   },
   {
     q: "What technologies and tools does Kazim work with?",
-    a: "Core stack: React, Next.js, TypeScript, PHP (Laravel, WordPress/ACF), Node.js, Express, Python, FastAPI, GraphQL. AI/ML: OpenAI, Gemini, Claude, RAG, prompt engineering. Automation: n8n, agentic workflows, webhooks. Infra: PostgreSQL, Supabase, MySQL, MongoDB, Docker, AWS, Oracle Cloud, Linux, CI/CD. Security: AI safety, prompt injection detection, NIST/SOC 2 compliance.",
+    a: "Core stack: React, Next.js, TypeScript, Node.js, Express, Python, FastAPI, PHP (OOP), GraphQL. AI/ML: OpenAI, Gemini, Claude, RAG, prompt engineering. Automation: n8n, agentic workflows, webhooks. Infra: PostgreSQL, Supabase, MySQL, MongoDB, Docker, AWS, Oracle Cloud, Linux, CI/CD. Security: AI safety, prompt injection detection, NIST/SOC 2 compliance.",
   },
   {
     q: "What results has Kazim delivered in production?",

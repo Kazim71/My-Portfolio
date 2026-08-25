@@ -34,7 +34,7 @@ const services = [
   {
     emoji: "🐍",
     title: "Full-Stack Development",
-    desc: "React/TypeScript interfaces backed by Laravel & PHP (OOP), Node.js/FastAPI services, and WordPress/ACF builds — end to end.",
+    desc: "React/TypeScript interfaces backed by Node.js, Express & Python (FastAPI) services, with PHP (OOP) where the stack calls for it — end to end.",
   },
   {
     emoji: "🌐",
@@ -80,7 +80,7 @@ export default function About() {
             <strong className="text-foreground">Full-Stack Engineer</strong> based in{" "}
             <strong className="text-foreground">India</strong>, building{" "}
             <strong className="text-foreground">React/TypeScript</strong> interfaces and{" "}
-            <strong className="text-foreground">PHP/Laravel</strong> backends, with production experience
+            <strong className="text-foreground">Node.js/Python</strong> backends, with production experience
             integrating LLM APIs via prompt engineering.
           </p>
           <p>

@@ -14,7 +14,7 @@ function WavySvg() {
 }
 
 const highlights = [
-  { icon: Briefcase, label: "Experience", value: "1.5+ years building React/TypeScript & Laravel/PHP production systems" },
+  { icon: Briefcase, label: "Experience", value: "1.7+ years building React/TypeScript & Node.js/Python production systems" },
   { icon: Wrench, label: "Focus", value: "Full-stack development, LLM integration, production SaaS platforms" },
   { icon: GraduationCap, label: "Education", value: "B.Tech ECE — 8.45 CGPA" },
 ]

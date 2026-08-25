@@ -1,7 +1,7 @@
 const keywords = [
   "Full-Stack Development",
   "React & TypeScript",
-  "PHP & Laravel",
+  "Node.js & Python",
   "AI Integration",
   "LLM Development",
   "AI Security",

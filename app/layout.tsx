@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     template: "%s | Mohammad Kazim",
   },
   description:
-    "Mohammad Kazim — Full-Stack Engineer in India with 1.5+ years building React/TypeScript interfaces and PHP/Laravel backends, with production experience integrating LLM APIs (OpenAI, Gemini) via prompt engineering.",
+    "Mohammad Kazim — Full-Stack Engineer in India with 1.7+ years building React/TypeScript interfaces and Node.js/Python backends, with production experience integrating LLM APIs (OpenAI, Gemini) via prompt engineering.",
   authors: [{ name: "Mohammad Kazim" }],
   creator: "Mohammad Kazim",
   keywords: [
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
     "Software Engineer",
     "React",
     "TypeScript",
-    "Laravel",
+    "Node.js",
+    "Python",
     "PHP",
-    "WordPress",
     "AI Integration",
     "AI Solutions",
     "AI Security",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Mohammad Kazim | Full-Stack Engineer & AI Integration",
     description:
-      "Full-Stack Engineer in India — building React/TypeScript interfaces, Laravel/PHP backends, and production LLM integrations.",
+      "Full-Stack Engineer in India — building React/TypeScript interfaces, Node.js/Python backends, and production LLM integrations.",
     type: "website",
     locale: "en_US",
     url: "https://my-portfolio-peach-delta-18.vercel.app",
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Mohammad Kazim | Full-Stack Engineer & AI Integration",
     description:
-      "Full-Stack Engineer — React/TypeScript interfaces, Laravel/PHP backends, and production LLM integrations.",
+      "Full-Stack Engineer — React/TypeScript interfaces, Node.js/Python backends, and production LLM integrations.",
   },
   alternates: {
     canonical: "https://my-portfolio-peach-delta-18.vercel.app",
@@ -99,7 +99,7 @@ export default function RootLayout({
               "@type": "Person",
               name: "Mohammad Kazim",
               url: "https://my-portfolio-peach-delta-18.vercel.app",
-              jobTitle: "Full-Stack Engineer — React/TypeScript, Laravel & AI Integration",
+              jobTitle: "Full-Stack Engineer — React/TypeScript, Node.js/Python & AI Integration",
               email: "mohammadkazim71@gmail.com",
               telephone: "+917898184847",
               address: {
@@ -111,9 +111,8 @@ export default function RootLayout({
                 "React",
                 "TypeScript",
                 "Next.js",
-                "Laravel",
+                "Node.js",
                 "PHP",
-                "WordPress",
                 "AI Engineering",
                 "AI Security",
                 "LLM Applications",
