@@ -15,23 +15,23 @@ function WavySvg() {
 const faqs = [
   {
     q: "Who is Mohammad Kazim?",
-    a: "Mohammad Kazim is a Full-Stack Engineer based in India with 1.7+ years of professional experience building React/TypeScript interfaces and Node.js/Python backends, with production experience integrating LLM APIs via prompt engineering. He's shipped a React/TypeScript operator dashboard, a RAG-grounded AI assistant, and a production multi-tenant SaaS platform — working across the full stack from frontend to cloud infrastructure.",
+    a: "Mohammad Kazim is a Full-Stack Software Engineer focused on AI solutions, based in Noida, India. He has 1.8+ years of professional experience — Full-Stack Software Engineer (AI Solutions) at EZ Rankings since March 2026, and Software Engineer (Backend) at Clay Brains from December 2024 to February 2026. He builds React/TypeScript front ends, Node.js and Python backends, and production LLM integrations, AI agents, and automations.",
   },
   {
     q: "What kind of AI solutions does Kazim build?",
-    a: "Kazim designs and deploys end-to-end AI-powered systems — including LLM-based chatbots, RAG pipelines, agentic workflows with tool-calling, AI security layers with prompt injection detection, and multi-step automation using n8n. Every solution is built for production with observability, error handling, and scalability in mind.",
+    a: "End-to-end AI systems for real business workflows: RAG agents grounded in real documents, Custom GPTs and AI agents with structured output and guardrails, an LLM-to-SQL analytics app where every number is computed by the database, and n8n automations for lead outreach, CRM sync with HubSpot, and feedback routing — built with retries, validation, and failure handling for production.",
   },
   {
     q: "What technologies and tools does Kazim work with?",
-    a: "Core stack: React, Next.js, TypeScript, Node.js, Express, Python, FastAPI, PHP (OOP), GraphQL. AI/ML: OpenAI, Gemini, Claude, RAG, prompt engineering. Automation: n8n, agentic workflows, webhooks. Infra: PostgreSQL, Supabase, MySQL, MongoDB, Docker, AWS, Oracle Cloud, Linux, CI/CD. Security: AI safety, prompt injection detection, NIST/SOC 2 compliance.",
+    a: "Full stack: React, Next.js, TypeScript, Node.js, Express, Python, FastAPI, GraphQL. AI: OpenAI, Anthropic Claude, Google Gemini, Groq, LangChain, LangGraph, LlamaIndex, RAG, vector databases, prompt engineering. Automation: n8n, Zapier, HubSpot, webhooks, Twilio, WhatsApp Business API. Data and infra: PostgreSQL, MySQL, MongoDB, Supabase, DuckDB, Redis, Docker, AWS EC2, Oracle Cloud, GitHub Actions, Linux.",
   },
   {
     q: "What results has Kazim delivered in production?",
-    a: "Key outcomes include: an 11.7× load-time reduction (6.1s → 525ms) on a production SaaS platform, 500+ daily transactions on a cloud-native platform, 40% reduction in manual effort through AI automation, 99.9% uptime on production infrastructure, and enterprise AI agents handling real customer interactions with built-in safety guardrails.",
+    a: "Key outcomes include: an 11.7× load-time reduction (6.1s → 525ms) on a multi-tenant SaaS platform, a booking platform serving 550+ service locations and 350+ daily transactions, 15+ AI automation workflows used daily by 50+ stakeholders with 40% less manual effort, 60% faster critical SQL queries, and an outreach engine sending 200+ automated emails a day.",
   },
   {
     q: "Is Kazim available for hire or freelance work?",
-    a: "Yes. Kazim is open to full-time software engineering and AI roles (both in India and remote), as well as freelance projects involving AI integration, backend development, or automation. You can reach him via email, LinkedIn, or WhatsApp.",
+    a: "Yes. Kazim is open to full-time software engineering and AI roles — in India, remote, onsite, or on US-timezone shifts — as well as freelance projects involving full-stack development, AI integration, or automation. You can reach him via email, LinkedIn, or WhatsApp.",
   },
   {
     q: "How does Kazim approach AI security?",

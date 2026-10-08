@@ -13,27 +13,53 @@ function WavySvg() {
 
 const experiences = [
   {
-    role: "Software Engineer — Full-Stack & AI Integration",
+    role: "Full-Stack Software Engineer — AI Solutions",
     company: "EZ Rankings",
     period: "March 2026 – Present",
     location: "Noida, India",
     highlights: [
-      "Developed and maintained Node.js/Python REST APIs integrating CRM, analytics, and third-party platforms across 15+ business workflows; debugged production issues end to end and deployed fixes directly",
-      "Designed prompt engineering workflows integrating OpenAI's API into internal tools via n8n, wiring LLM calls, webhooks, and third-party APIs into multi-step automations covering 15+ business processes",
-      "Automated multi-step operational workflows end to end, cutting manual effort by 40% and enabling self-service dashboards used daily by 50+ people",
-      "Translated operational challenges into scalable, AI-driven workflow solutions in collaboration with stakeholders",
+      "Gather requirements with clients and stakeholders and deliver 15+ AI automation workflows using n8n, LLM APIs, webhooks, and internal tools — owning each from scoping to rollout",
+      "Build and maintain REST API integrations in Node.js and Python, connecting CRM, analytics, and third-party platforms with request validation, retries, and error handling",
+      "Automated HubSpot CRM workflows (contacts, deals, lead routing) through the HubSpot API and webhooks, connecting CRM data with AI services",
+      "Built Custom GPTs and AI agents with structured prompts, output constraints, and guardrails for consistent, traceable business workflows",
+      "Shipped self-service dashboards and automations used daily by 50+ stakeholders, cutting manual effort by 40%",
+      "Debug failed executions through logs, payload inspection, and root-cause analysis across APIs, SQL databases, and AWS EC2 / Oracle Cloud hosting",
     ],
   },
   {
-    role: "Associate Software Engineer",
+    role: "Software Engineer — Backend",
     company: "Clay Brains",
-    period: "February 2025 – February 2026",
+    period: "December 2024 – February 2026",
     location: "Delhi, India",
     highlights: [
-      "Developed backend modules and REST APIs in JavaScript and Python; debugged and optimized SQL/database queries, cutting query time by 60% on the production database",
-      "Built JWT/RBAC authentication modules and real-time WebSocket services; deployed via GitHub Actions CI/CD, maintaining 99.9% uptime across 5+ environments",
-      "Designed production backend services and data pipelines on AWS EC2",
-      "Developed real-time monitoring solutions, reducing issue-detection time by 30%",
+      "Built and maintained Python REST services, backend modules, and SQL schemas behind customer-facing web apps, including authentication and input validation",
+      "Developed web features with React, Next.js, Node.js, and Express.js, plus third-party API integrations with auth, validation, and request/response transformation",
+      "Optimized SQL queries and indexing, cutting critical query time by 60%",
+      "Built JWT/RBAC authentication and API monitoring and alerting, reducing issue-detection time by 30%",
+      "Maintained Docker environments and GitHub Actions CI/CD pipelines, keeping 99.9% uptime across 5+ environments",
+      "Resolved production incidents through log analysis, database inspection, and root-cause fixes across application and integration layers",
+    ],
+  },
+  {
+    role: "Project Member — Data Science & AI Club",
+    company: "Bharati Vidyapeeth Deemed University",
+    period: "September 2024 – May 2025",
+    location: "Pune, India",
+    highlights: [
+      "Built ML and GenAI projects (fraud detection, document QA) in a 5-member team, deployed locally and on cloud",
+      "Ran Python and ML workshops for 40+ juniors with hands-on exercises",
+    ],
+  },
+  {
+    role: "Edge AI Intern — Instrumentation & Control",
+    company: "SAIL",
+    period: "June 2024 – August 2024",
+    location: "India",
+    highlights: [
+      "Applied ML to industrial processes, analyzing 250K+ time-series sensor readings to optimize performance",
+      "Built lightweight ML models and pipelines for real-time monitoring on edge devices, without altering existing hardware",
+      "Developed interactive dashboards that surfaced insights for management and engineers",
+      "Worked with cross-functional teams to integrate ML insights into instrumentation workflows",
     ],
   },
 ]
@@ -43,7 +69,7 @@ const education = [
     degree: "B.Tech, Electronics & Communication Engineering",
     institution: "Bharati Vidyapeeth Deemed University, Pune",
     period: "2021 – 2025",
-    detail: "CGPA: 8.45/10",
+    detail: "CGPA: 8.45/10 · Final-year project: ML-based acoustic motorcycle fault detection (Random Forest, SVM, KNN) — 94.7% accuracy",
   },
 ]
 

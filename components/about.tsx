@@ -18,23 +18,23 @@ function WavySvg() {
 const services = [
   {
     emoji: "🤖",
-    title: "AI & LLM Integration",
-    desc: "Building production AI assistants, prompt engineering frameworks, and RAG-powered applications with safety guardrails.",
+    title: "AI Solutions & Agents",
+    desc: "LLM applications, RAG over real documents, Custom GPTs, and AI agents with structured output, tool calling, and guardrails.",
   },
   {
     emoji: "🛡️",
     title: "AI Security",
-    desc: "Prompt injection detection, input sanitization, output validation, hallucination mitigation, and NIST/SOC 2 compliance for AI systems.",
+    desc: "Prompt injection detection, input sanitization, output validation, hallucination mitigation, and human escalation paths for AI systems.",
   },
   {
     emoji: "⚡",
-    title: "Workflow Automation",
-    desc: "End-to-end agentic automation using n8n, webhooks, and LLM tool-calling to automate multi-step business processes.",
+    title: "Workflow & CRM Automation",
+    desc: "n8n, Zapier, and HubSpot automations — lead capture and routing, CRM data sync, and email/SMS follow-ups with retries and failure handling.",
   },
   {
     emoji: "🐍",
     title: "Full-Stack Development",
-    desc: "React/TypeScript interfaces backed by Node.js, Express & Python (FastAPI) services, with PHP (OOP) where the stack calls for it — end to end.",
+    desc: "React/TypeScript front ends backed by Node.js, Express, and Python (FastAPI) services — from data model to deployment.",
   },
   {
     emoji: "🌐",
@@ -63,7 +63,7 @@ export default function About() {
             About Me
           </span>
           <h2 className="mt-4 font-display text-4xl leading-[0.95] tracking-tight text-foreground md:text-6xl">
-            Full-Stack Products, AI-Integrated
+            Full-Stack Software, AI Solutions
           </h2>
           <WavySvg />
         </motion.div>
@@ -77,17 +77,19 @@ export default function About() {
         >
           <p>
             I&apos;m <strong className="text-foreground">Mohammad Kazim</strong>, a{" "}
-            <strong className="text-foreground">Full-Stack Engineer</strong> based in{" "}
-            <strong className="text-foreground">India</strong>, building{" "}
-            <strong className="text-foreground">React/TypeScript</strong> interfaces and{" "}
-            <strong className="text-foreground">Node.js/Python</strong> backends, with production experience
-            integrating LLM APIs via prompt engineering.
+            <strong className="text-foreground">Full-Stack Software Engineer</strong> focused on{" "}
+            <strong className="text-foreground">AI solutions</strong>, based in{" "}
+            <strong className="text-foreground">Noida, India</strong>. For 1.8+ years I&apos;ve built{" "}
+            <strong className="text-foreground">React/TypeScript</strong> front ends,{" "}
+            <strong className="text-foreground">Node.js and Python</strong> backends, and the LLM integrations,
+            agents, and automations that connect them to real business workflows.
           </p>
           <p>
-            I&apos;ve shipped a React/TypeScript operator dashboard, a RAG-grounded AI assistant, and a
-            production multi-tenant SaaS platform — delivering measurable results such as supporting{" "}
-            <strong className="text-foreground">500+ daily transactions</strong>, cutting load times by{" "}
-            <strong className="text-foreground">11.7×</strong>, and reducing manual effort by{" "}
+            I work directly with stakeholders to turn requirements into shipped systems — a multi-tenant SaaS
+            platform with <strong className="text-foreground">11.7× faster</strong> loads, a booking platform
+            serving <strong className="text-foreground">550+ locations</strong>, a RAG agent over{" "}
+            <strong className="text-foreground">200+ documents</strong>, and{" "}
+            <strong className="text-foreground">15+ automation workflows</strong> that cut manual effort by{" "}
             <strong className="text-foreground">40%</strong>.
           </p>
         </motion.div>

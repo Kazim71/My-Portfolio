@@ -3,6 +3,7 @@ import Hero from "@/components/hero"
 import StatsBar from "@/components/stats-bar"
 import Marquee from "@/components/marquee"
 import About from "@/components/about"
+import MotionStory from "@/components/motion-story"
 import LiveSystem from "@/components/live-system"
 import Experience from "@/components/experience"
 import Projects from "@/components/projects"
@@ -26,6 +27,7 @@ export default function Home() {
         <Hero />
         <StatsBar />
         <About />
+        <MotionStory />
         <LiveSystem />
         <Marquee />
         <Experience />
