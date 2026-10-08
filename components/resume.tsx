@@ -14,8 +14,8 @@ function WavySvg() {
 }
 
 const highlights = [
-  { icon: Briefcase, label: "Experience", value: "1.7+ years building React/TypeScript & Node.js/Python production systems" },
-  { icon: Wrench, label: "Focus", value: "Full-stack development, LLM integration, production SaaS platforms" },
+  { icon: Briefcase, label: "Experience", value: "1.8+ years — EZ Rankings (Mar 2026 – Present), Clay Brains (Dec 2024 – Feb 2026)" },
+  { icon: Wrench, label: "Focus", value: "Full-stack development, AI agents & RAG, workflow automation" },
   { icon: GraduationCap, label: "Education", value: "B.Tech ECE — 8.45 CGPA" },
 ]
 
@@ -54,7 +54,7 @@ export default function Resume() {
               </span>
               <div className="text-left">
                 <p className="font-display text-2xl tracking-tight text-foreground">Mohammad Kazim</p>
-                <p className="text-sm font-semibold text-muted-foreground">Full-Stack Engineer &amp; AI Integration</p>
+                <p className="text-sm font-semibold text-muted-foreground">Full-Stack Software Engineer · AI Solutions</p>
               </div>
             </div>
 

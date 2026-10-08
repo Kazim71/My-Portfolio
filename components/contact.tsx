@@ -27,7 +27,9 @@ const contacts = [
 const interests = [
   "Full-Stack Development",
   "Node.js & Python",
-  "AI Integration",
+  "AI Solutions",
+  "AI Agents & RAG",
+  "Workflow Automation",
   "AI Security",
   "Backend Systems",
   "LLM Applications",

@@ -4,10 +4,10 @@ import { useEffect, useRef, useState } from "react"
 import { motion, useInView } from "framer-motion"
 
 const stats = [
-  { value: 1.7, suffix: "+", decimal: 1, label: "Years of Professional Experience" },
-  { value: 15, suffix: "+", decimal: 0, label: "Production Business Workflows" },
-  { value: 500, suffix: "+", decimal: 0, label: "Daily Transactions Supported" },
-  { value: 8.45, suffix: "", decimal: 2, label: "CGPA — Academic Excellence" },
+  { value: 1.8, suffix: "+", decimal: 1, label: "Years Building Production Software" },
+  { value: 15, suffix: "+", decimal: 0, label: "AI Automation Workflows Shipped" },
+  { value: 50, suffix: "+", decimal: 0, label: "Stakeholders Using My Tools Daily" },
+  { value: 40, suffix: "%", decimal: 0, label: "Less Manual Effort" },
 ]
 
 function AnimatedNumber({ value, suffix, decimal, trigger }: { value: number; suffix: string; decimal: number; trigger: boolean }) {

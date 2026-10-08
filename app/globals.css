@@ -175,9 +175,41 @@ html {
   }
 }
 
+/* Hero request trace: a packet runs Request → Ship. The wrapper spans the row
+   and the dot sits at its right edge, so translating the wrapper -100% → 0 moves
+   the dot across the full row using transform only (compositor, no layout). */
+@keyframes hero-trace {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  6% {
+    opacity: 1;
+  }
+  62% {
+    opacity: 1;
+  }
+  /* Travel ends at 70%; the rest of the cycle is a quiet pause. */
+  70%,
+  100% {
+    transform: translateX(0);
+    opacity: 0;
+  }
+}
+
+.hero-trace {
+  transform: translateX(-100%);
+  opacity: 0;
+  animation: hero-trace 5.2s cubic-bezier(0.65, 0, 0.35, 1) 2.9s infinite;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .animate-float-slow {
     animation: none;
+  }
+  .hero-trace {
+    animation: none;
+    opacity: 0;
   }
   html {
     scroll-behavior: auto;

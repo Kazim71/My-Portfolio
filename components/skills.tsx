@@ -11,38 +11,43 @@ function WavySvg() {
   )
 }
 
+// Consolidated from every resume variant — nothing here that isn't on at least one of them.
 const domains = [
   {
     title: "AI Engineering",
-    skills: ["Agentic AI", "LLM Applications", "Prompt Engineering", "RAG", "AI Safety", "AI Evaluation", "OpenAI", "Claude", "Gemini"],
+    skills: ["AI Agents", "Agentic AI", "LLM Applications", "Custom GPTs", "Prompt Engineering", "RAG", "Tool Calling", "Structured Output", "AI Evaluation", "OpenAI", "Anthropic Claude", "Google Gemini", "Groq"],
+  },
+  {
+    title: "AI Frameworks & ML",
+    skills: ["LangChain", "LangGraph", "LlamaIndex", "Ollama", "ChromaDB", "Vector Databases", "LLM Fine-tuning (Unsloth)", "Scikit-learn", "TensorFlow", "Pandas", "NumPy"],
   },
   {
     title: "AI Security",
-    skills: ["Prompt Injection Detection", "Input Sanitization", "Output Validation", "Hallucination Mitigation", "NIST / SOC 2", "AI Safety Guardrails"],
+    skills: ["Prompt Injection Detection", "Input Sanitization", "Output Validation", "Hallucination Mitigation", "AI Guardrails", "Human Escalation", "NIST / SOC 2"],
   },
   {
-    title: "AI Automation",
-    skills: ["n8n", "Agentic Workflows", "Workflow Orchestration", "Webhooks", "LLM Tool-Calling", "AI Agent Frameworks"],
+    title: "Automation & Integrations",
+    skills: ["n8n", "Zapier", "HubSpot", "Agentic Workflows", "Webhooks", "Lead Routing", "CRM Data Sync", "Twilio", "Gmail API", "WhatsApp Business API", "Shopify", "WooCommerce", "Odoo", "Meta Ads", "GA4"],
   },
   {
     title: "Backend",
-    skills: ["Node.js", "Express.js", "Python", "FastAPI", "PHP (OOP)", "REST APIs", "GraphQL APIs", "JWT", "OAuth2", "WebSockets"],
+    skills: ["Node.js", "Express.js", "Python", "FastAPI", "REST APIs", "GraphQL APIs", "WebSockets", "JWT", "OAuth2", "RBAC", "Multi-tenant Design", "PHP (OOP)"],
+  },
+  {
+    title: "Frontend",
+    skills: ["React", "Next.js", "TypeScript", "JavaScript (ES6+)", "Tailwind CSS", "Responsive UI"],
+  },
+  {
+    title: "Databases",
+    skills: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Supabase", "DuckDB", "Query Optimization"],
+  },
+  {
+    title: "Cloud & DevOps",
+    skills: ["Docker", "Docker Compose", "AWS EC2", "Oracle Cloud", "GitHub Actions", "CI/CD", "Vercel", "Railway", "Render", "RabbitMQ", "Prometheus", "Grafana", "OpenTelemetry"],
   },
   {
     title: "Networking & Linux",
     skills: ["Linux Administration", "TCP/IP", "DNS", "Nginx", "SSH", "Firewall & iptables", "Network Debugging", "SSL/TLS"],
-  },
-  {
-    title: "Databases",
-    skills: ["PostgreSQL", "MySQL", "MongoDB", "Redis", "Supabase"],
-  },
-  {
-    title: "Frontend",
-    skills: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
-  },
-  {
-    title: "Cloud & DevOps",
-    skills: ["Docker", "AWS", "GitHub Actions", "CI/CD", "RabbitMQ", "Prometheus", "Grafana", "OpenTelemetry"],
   },
 ]
 
@@ -50,14 +55,14 @@ const specializations = [
   "Full-Stack Development",
   "React & TypeScript",
   "Node.js & Python",
-  "API Development",
-  "AI-Powered Applications",
-  "Agentic Automation",
-  "LLM Integration",
+  "API & Third-Party Integrations",
+  "AI Solutions & Agents",
+  "LLM Integration & RAG",
+  "Workflow & CRM Automation",
   "AI Security & Safety",
-  "Backend Systems",
-  "Networking & Linux",
+  "Data Pipelines",
   "Cloud Infrastructure",
+  "Networking & Linux",
   "System Design",
 ]
 
